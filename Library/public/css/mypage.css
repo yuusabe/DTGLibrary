@@ -1,0 +1,48 @@
+/*中央揃え*/
+#book_p{
+  text-align: center;
+}
+#account_p{
+  text-align: center;
+  color: #666;
+  margin: 20px 10px ;
+}
+#text{
+  font-weight: bolder;
+  font-size: x-large;
+  text-align: center;
+  color: #666;
+  margin-top: 30px;
+}
+#account{
+  border: 3px solid rgb(221, 156, 71);
+  border-radius: 10px;
+  height: 120px;
+  width: 370px;
+  margin: auto;
+}
+#book_p{
+  border: 3px solid rgb(221, 156, 71);
+  border-radius: 10px;
+  height: 180px;
+  width: 470px;
+  margin: auto;
+}
+/*横並び*/
+#book{
+  text-align: center;
+  color:#666;
+  display: inline-block;
+  vertical-align: top;
+}
+#icon{
+  margin-top: 30px;
+}
+#button{
+  text-align: center;
+  margin-top: 30px;
+}
+/*ヘッダー右寄せ*/
+#header{
+  text-align: right;
+}
