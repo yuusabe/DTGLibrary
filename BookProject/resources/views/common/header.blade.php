@@ -21,15 +21,24 @@
                 <img src="image/dtg_book_logo.png" alt="アイコン" width="135" height="130" />
 
                 <?php
-                if (!empty($_COOKIE["atype"]))
+                if (!empty($_COOKIE["mflag"]))
                 {
-                  $atype_in = $_COOKIE["atype"];
+                  $mflag = $_COOKIE["mflag"];
                 }
                 else
                 {
-                    $atype_in = "なし";
+                    $mflag = "なし";
                 }
-                if ($atype_in == "管理者ユーザ")
+                if (!empty($_COOKIE["aname"]))
+                {
+                  $aname = $_COOKIE["aname"];
+                }
+                else
+                {
+                    $aname = "なし";
+                }
+
+                if ($mflag == "1")
                 {
                     echo '<img src="image/administrator_logo.png" alt="アイコン" width="150" height="150" />';
                 }
@@ -37,6 +46,9 @@
                 {
                     echo '<img src="image/user_logo.png" alt="アイコン" width="150" height="150" />';
                 }
+
+                echo $aname."さん";
+
                 ?>
 
             </div>

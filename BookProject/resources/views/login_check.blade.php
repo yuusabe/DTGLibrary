@@ -7,7 +7,12 @@
   <div id="formContent">
     <!-- Tabs Titles -->
 
-
+<?php
+if(!empty($_COOKIE['anum']))
+{
+  echo $_COOKIE['anum'];
+}
+?>
 
 
 <script type="text/javascript">

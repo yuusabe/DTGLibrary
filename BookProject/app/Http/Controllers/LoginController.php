@@ -21,6 +21,9 @@ class LoginController extends Controller
 
         if($pass != "" && $pass_in == $pass)
         {
+            setcookie("anum",$adata["account_number"]);
+            setcookie("aname",$adata["account_name"]);
+            setcookie("mflag",$adata["manager_flag"]);
             return view('login_check',compact('adata'));
         }
 
