@@ -24,6 +24,7 @@ class LoginController extends Controller
             setcookie("anum",$adata["account_number"]);
             setcookie("aname",$adata["account_name"]);
             setcookie("mflag",$adata["manager_flag"]);
+            setcookie("login_e","ログインに失敗しました",time()-1800);
             return view('login_check',compact('adata'));
         }
 
