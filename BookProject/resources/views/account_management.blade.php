@@ -7,7 +7,7 @@
 <main>
   <form method="post" action="{{ route('account_manage.post') }}">
     @csrf
-    <!-- <form action="https://www-cf.dtg-shosekikanri2020-test.tk/account_management_check" method="get"> -->
+    <!-- <form action="hhttps://www-cf.dtg-booklibrary.tk/account_management_check" method="get"> -->
     <div id="text">
       <p>登録する内容を入力してください。</p>
     </div>

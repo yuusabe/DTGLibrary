@@ -12,7 +12,12 @@
       <img src="image/dtg_book_logo.png" id="icon" alt="アイコン" />
     </div>
 
-
+<?php
+if (!empty($_COOKIE["login_e"]))
+{
+  echo $_COOKIE["login_e"];
+}
+?>
 
     <!-- Login Form -->
     <form method="post" action="{{ route('login.check') }}" enctype="multipart/form-data">
@@ -29,7 +34,7 @@
         </div>
       </div> -->
 
-      <input type="submit" class="fadeIn fourth" value="ログイン" onclick="writeCookie()">
+      <input type="submit" class="fadeIn fourth" value="ログイン">
       
 
       <!-- <button onclick="readCookie()">読み込み</button><br>
@@ -74,7 +79,7 @@
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/password_send'">パスワードを忘れた方はこちら</a>
+        <a class="underlineHover" href="#" onclick="location.href='https://www-cf.dtg-booklibrary.tk/password_send'">パスワードを忘れた方はこちら</a>
       </div>
 
     </form>

@@ -76,9 +76,22 @@
       </form>
     </div>
     <div id="button">
-      <button type="button" class="btn btn-outline-danger">
-        書籍編集
-      </button>
+      <?php
+      if (!empty($_COOKIE["mflag"]))
+      {
+        $mflag = $_COOKIE["mflag"];
+      }
+      else
+      {
+          $mflag = "なし";
+      }
+      if ($mflag == "1")
+      {
+          echo '<button type="button" class="btn btn-outline-danger">
+                書籍編集
+              </button>';
+      }
+      ?>
     </div>
   </div>
   {{$d->multi}}
@@ -86,7 +99,7 @@
 
   <div id="button_p">
     <div id="button" id="next">
-      <button type="button" class="btn btn-outline-success" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/information_of_book'">
+      <button type="button" class="btn btn-outline-success" onclick="location.href='https://www-cf.dtg-booklibrary.tk/information_of_book'">
         前
       </button>
     </div>

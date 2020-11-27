@@ -24,7 +24,7 @@
     </div>
     <div id="button_p">
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary"  onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/list_of_books'">
+            <button type="button" class="btn btn-outline-secondary"  onclick="location.href='https://www-cf.dtg-booklibrary.tk/list_of_books'">
                 一覧へ
             </button>
         </div>
