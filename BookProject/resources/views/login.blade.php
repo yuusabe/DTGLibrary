@@ -12,7 +12,12 @@
       <img src="image/dtg_book_logo.png" id="icon" alt="アイコン" />
     </div>
 
-
+<?php
+if (!empty($_COOKIE["login_e"]))
+{
+  echo $_COOKIE["login_e"];
+}
+?>
 
     <!-- Login Form -->
     <form method="post" action="{{ route('login.check') }}" enctype="multipart/form-data">

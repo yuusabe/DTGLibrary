@@ -27,6 +27,7 @@ class LoginController extends Controller
             return view('login_check',compact('adata'));
         }
 
+        setcookie("login_e","ログインに失敗しました");
         return view('login');
     }
 }
