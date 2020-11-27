@@ -10,9 +10,9 @@
             <p>アカウント登録情報</p>
         </div>
         <div id="account">
-            <p>アカウント名：DTG太郎</p>
-            <p>メールアドレス：tarou@pasona.tech</p>
-            <p>パスワード：・・・・・・・・・・</p>
+            <p>アカウント名：{{$adata -> account_name}}</p>
+            <p>メールアドレス：{{$adata -> mail_address}}</p>
+            <p>パスワード：{{$adata -> password}}</p>
         </div>
     </div>
     <div id="boo">
@@ -24,15 +24,20 @@
         <p>貸出中書籍</p>
     </div>
     <div id="book_p">
-        <div id="book">
-            <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
-        </div>
-        <div id="book">
-            <p>タイトル：RPAのはじめかた</p>
-            <p>発行年：2001年</p>
-            <p>著者：DTG花子</p>
-            <p>返却期限：yyyy/MM/dd</p>
-        </div>
+        <?php
+            if ($lcheck == "1")
+            {
+                echo '<div id="book">
+                        <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
+                    </div>
+                    <div id="book">
+                        <p>タイトル：{{$bdata -> title}}</p>
+                        <p>発行年：{{$bdata -> year_of_issue}}</p>
+                        <p>著者：{{$bdata -> Author}}</p>
+                        <p>返却期限：{{$ldata -> return_day}}</p>
+                    </div>';
+            }
+        ?>
     </div>
     <div id="boo">
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/return_book'">
