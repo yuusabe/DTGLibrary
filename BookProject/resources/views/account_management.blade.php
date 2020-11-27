@@ -54,6 +54,8 @@
   </div>
 
   @foreach($a_list as $a)
+  <form method="post" action="{{ route('account_manage_change.if') }}">
+  @csrf
   <div id="account_p">
     <div id="account">
       <nobr id="a_text">
@@ -67,18 +69,19 @@
     <div id="account">
       <div id="button_p">
         <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_change'">
+          <button type="submit" class="btn btn-outline-secondary" value='{{$a->account_number}}' name = 'change'>
             編集
           </button>
         </div>
         <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_delete_check'">
+          <button type="submit" class="btn btn-outline-secondary" value='{{$a->account_number}}' name = 'delete'>
             削除
           </button>
         </div>
       </div>
     </div>
   </div>
+  </form>
   @endforeach
 <!--   </form> -->
 </main>

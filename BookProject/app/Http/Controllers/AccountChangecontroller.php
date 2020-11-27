@@ -7,7 +7,7 @@ use App\Models\Account;
 use App\Models\Lend_book;
 use Validator;
 
-class AccountController extends Controller
+class AccountchangeController extends Controller
 {
     //アカウント登録時のコントローラー
     private $formItems = ["account_name", "address", "password","accounttype"];
@@ -22,19 +22,33 @@ class AccountController extends Controller
     function show(){
         return view('account_management');
     }
-    function post(Request $request){
+
+    function if(Request $request){
+        if (Input::get('change')){
+            $this->change_form();
+        }elseif (Input::get('delete')){
+            $this->delete_post();
+        }
+    }
+
+    function change_form(Request $request){
+        $num = $request;
+        return view('account_change', compact('num'));
+    }
+
+    function change_post(Request $request){
         $input = $request->only($this->formItems);
         
         $validator = Validator::make($input, $this->validator);
 		if($validator->fails()){
-			return redirect()->action('App\Http\Controllers\AccountController@show')
+			return redirect()->action('App\Http\Controllers\AccountchangeController@show')
 				->withInput()
 				->withErrors($validator);
         }
         
         //セッションに書き込む
         $request->session()->put("account_input", $input);
-        return redirect()->action('App\Http\Controllers\AccountController@confirm');
+        return redirect()->action('App\Http\Controllers\AccountchangeController@confirm');
     }
 
     function confirm(Request $request){
@@ -42,7 +56,7 @@ class AccountController extends Controller
         $input = $request->session()->get("account_input");
         //セッションに値が無い時はフォームに戻る
         if(!$input){
-            return redirect()->action('App\Http\Controllers\AccountController@show');
+            return redirect()->action('App\Http\Controllers\AccountchangeController@show');
         }
         return view("account_management_check",["input" => $input]);
     }
@@ -52,7 +66,7 @@ class AccountController extends Controller
         $input = $request->session()->get("account_input");
         //セッションに値が無い時はフォームに戻る
         if(!$input){
-            return redirect()->action('App\Http\Controllers\AccountController@show');
+            return redirect()->action('App\Http\Controllers\AccountchangeController@show');
         }
 
 
