@@ -11,7 +11,11 @@
     </div>
     <div id=tb_p>
         <div id="tb">
-          <p>アカウント名</p>
+          <p>アカウント番号</p>
+        </div>
+        <input type="text" id="tbox" name="account_name"  readonly>
+        <div id="tb">
+          <p>{{$num}}</p>
         </div>
         <input type="text" id="tbox" name="account_name" placeholder="DTG太郎">
         <div id="tb">
