@@ -76,9 +76,14 @@
       </form>
     </div>
     <div id="button">
-      <button type="button" class="btn btn-outline-danger">
-        書籍編集
-      </button>
+      <?php
+      if ($mflag == "1")
+      {
+          echo '<button type="button" class="btn btn-outline-danger">
+                書籍編集
+              </button>';
+      }
+      ?>
     </div>
   </div>
   {{$d->multi}}
