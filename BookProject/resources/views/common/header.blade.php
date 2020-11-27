@@ -54,6 +54,7 @@
             </div>
             <div id="pine">
                 <div id="h_button">
+<<<<<<< HEAD
                     <?php
                     if ($mflag == "1")
                     {
@@ -61,12 +62,27 @@
                     }
                     ?>
                     <button type="button" id="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/list_of_books'">
+=======
+                    <button type="button" id="button" class="btn btn-outline-danger" onclick="location.href='https://www-cf.dtg-booklibrary.tk/RPA'">
+                        貸出情報
+                    </button>
+                    <button type="button" id="button" class="btn btn-outline-danger" onclick="location.href='https://www-cf.dtg-booklibrary.tk/book_add'">
+                        書籍登録
+                    </button>
+                    <button type="button" id="button" class="btn btn-outline-danger" onclick="location.href='https://www-cf.dtg-booklibrary.tk/category'">
+                        カテゴリ管理
+                    </button>
+                    <button type="button" id="button" class="btn btn-outline-danger" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_management'">
+                        アカウント管理
+                    </button>
+                    <button type="button" id="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/list_of_books'">
+>>>>>>> 43be7eaf356fa798bafc2699048f3185c0a86059
                         書籍一覧
                     </button>
-                    <button type="button" id="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/mypage'">
+                    <button type="button" id="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/mypage'">
                         マイページ
                     </button>
-                    <button type="button" id="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/login'">
+                    <button type="button" id="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/login'">
                         ログアウト
                     </button>
                 </div>
