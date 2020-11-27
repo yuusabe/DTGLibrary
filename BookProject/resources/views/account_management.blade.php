@@ -55,6 +55,7 @@
 
   @foreach($a_list as $a)
   <form method="post" action="{{ route('account_manage_change.if') }}">
+  @csrf
   <div id="account_p">
     <div id="account">
       <nobr id="a_text">
