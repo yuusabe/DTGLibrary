@@ -34,7 +34,7 @@ if (!empty($_COOKIE["login_e"]))
         </div>
       </div> -->
 
-      <input type="submit" class="fadeIn fourth" value="ログイン" onclick="writeCookie()">
+      <input type="submit" class="fadeIn fourth" value="ログイン">
       
 
       <!-- <button onclick="readCookie()">読み込み</button><br>
