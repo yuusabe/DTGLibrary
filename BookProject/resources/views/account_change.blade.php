@@ -15,7 +15,7 @@
         </div>
         <input type="text" id="tbox" name="account_name"  readonly>
         <div id="tb">
-          <p>{{$num}}</p>
+          <p></p>
         </div>
         <input type="text" id="tbox" name="account_name" placeholder="DTG太郎">
         <div id="tb">
