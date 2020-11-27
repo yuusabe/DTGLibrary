@@ -8,7 +8,7 @@
     <!-- Tabs Titles -->
 
 <?php
-if(empty($_COOKIE['anum']))
+if(!empty($_COOKIE['anum']))
 {
   echo $_COOKIE['anum'];
 }
