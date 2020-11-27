@@ -74,7 +74,7 @@
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/password_send'">パスワードを忘れた方はこちら</a>
+        <a class="underlineHover" href="#" onclick="location.href='https://www-cf.dtg-booklibrary.tk/password_send'">パスワードを忘れた方はこちら</a>
       </div>
 
     </form>
