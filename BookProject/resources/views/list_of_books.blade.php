@@ -77,6 +77,14 @@
     </div>
     <div id="button">
       <?php
+      if (!empty($_COOKIE["mflag"]))
+      {
+        $mflag = $_COOKIE["mflag"];
+      }
+      else
+      {
+          $mflag = "なし";
+      }
       if ($mflag == "1")
       {
           echo '<button type="button" class="btn btn-outline-danger">
