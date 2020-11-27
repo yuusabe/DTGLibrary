@@ -67,12 +67,12 @@
     <div id="account">
       <div id="button_p">
         <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='hhttps://www-cf.dtg-booklibrary.tk/account_change'">
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_change'">
             編集
           </button>
         </div>
         <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='hhttps://www-cf.dtg-booklibrary.tk/account_delete_check'">
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_delete_check'">
             削除
           </button>
         </div>
