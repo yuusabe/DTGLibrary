@@ -23,18 +23,18 @@ class AccountchangeController extends Controller
         return view('account_management');
     }
 
-    function if(Request $request){
-        if (Input::get('change')){
-            $this->change_form();
-        }elseif (Input::get('delete')){
-            $this->delete_post();
-        }
-    }
+    // function if(Request $request){
+    //     if (Input::get('change')){
+    //         $this->change_form();
+    //     }elseif (Input::get('delete')){
+    //         $this->delete_post();
+    //     }
+    // }
 
-    function change_form(Request $request){
-        $num = $request;
-        return view('account_change', compact('num'));
-    }
+    // function change_form(Request $request){
+    //     $num = $request;
+    //     return view('account_change', compact('num'));
+    // }
 
     function change_post(Request $request){
         $input = $request->only($this->formItems);

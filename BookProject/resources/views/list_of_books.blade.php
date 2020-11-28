@@ -44,8 +44,11 @@
   <input id="sbtn" id="search" type="submit" value="検索" /></div>
   </form> -->
 
+  @for(i=0, i < count($data), i++)
+  @endfor
+
   @foreach($data as $d)
-  <div id="book_p">
+    <div id="book_p">
     <div id="book">
       <img src="{{$d->path}}" id="image" alt="表紙画像" width="135" height="135" />
     </div>
@@ -63,8 +66,8 @@
         @endif
       </div>
     </div>
-  </div>
-  <div id="button_p">
+    </div>
+    <div id="button_p">
     <div id="button">
 
     <form action="http://54.248.141.223/information_of_book" method="post">
@@ -93,8 +96,8 @@
       }
       ?>
     </div>
-  </div>
-  {{$d->multi}}
+    </div>
+    {{$d->multi}}
   @endforeach
 
   <div id="button_p">

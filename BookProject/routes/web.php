@@ -21,7 +21,7 @@ Route::get('/account_change_check', 'App\Http\Controllers\AppController@account_
 
 // Route::get('/account_change', 'App\Http\Controllers\AccountChangeController@change_show')->name("account_manage_change.show");
 Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@change_post')->name("account_manage_change.post");
-Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@if')->name("account_manage_change.if");
+// Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@if')->name("account_manage_change.if");
 //追記20201127：アカウント管理画面、アカウントリスト表示、のちにshowに合併予定
 // Route::get('/account_change', 'App\Http\Controllers\AccountChangeController@list');
 
