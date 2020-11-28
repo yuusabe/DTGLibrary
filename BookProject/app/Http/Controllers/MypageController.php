@@ -20,9 +20,10 @@ class MypageController extends Controller
         $anum =  $_COOKIE["anum"];
 
         $adata = $account::where('account_number', $anum)->first();
-
-        $ldata = $lend_book::where('l_account_number', $anum)->get();
-        $ldata = $ldata::where('return_flag', 1)->first();
+        
+        $book->where('l_account_number', $anum);
+        $book->where('return_flag', 1);
+        $ldata = $book->get();
 
         $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
 
