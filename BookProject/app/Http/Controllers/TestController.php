@@ -38,6 +38,20 @@ class TestController extends Controller
             $path = Storage::disk('s3')->url($d->cover_pic);
             $d->path = $path;
 
+            $lend_exist = Lend_book::where('return_flag',FALSE)
+                ->where('l_book_number',$d->book_number)
+                ->exists();
+            if($lend_exist == TRUE){
+                $lend_data = Lend_book::where('return_flag',FALSE)
+                ->where('l_book_number',$d->book_number)
+                ->first();
+            }else{
+                $lend_data = new \stdClass();
+                $lend_data->return_day = '0000年00月00日';
+            }
+            $d->lendinfo = $lend_data->return_day;
+            
+
             if($d->book_number == $before){
                 $d->multi = 'ON' ;
             }else{
@@ -275,7 +289,7 @@ class TestController extends Controller
                 'return_flag' => FALSE 
             ]);
         return view('completion');
-        
+
         }elseif($request->has('cancel')){
             return redirect()->route('book.list');
         }
