@@ -163,8 +163,8 @@ class AccountController extends Controller
     function send1(Request $request){
         //セッションから値を取り出す
         $input1 = $request->session()->get("account_input_change");
-        Log::debug($input1);
-        $number = $input1[0];
+        //Log::debug($input1);
+        $number = $input[0];
         Account::where(‘a_logic_flag’, TRUE)
         ->where('account_number', $number)->update([
                 'account_name' => $input1['account_name'],
