@@ -85,6 +85,10 @@ Route::get('/category_check', 'App\Http\Controllers\AppController@category_check
 // Route::get('/category', 'App\Http\Controllers\AppController@category');
 Route::get('/category', 'App\Http\Controllers\CategoryController@list_show')->name('category.list_show');
 Route::post('/category', 'App\Http\Controllers\CategoryController@list_post')->name('category.list_post');
+Route::get('/category_change_check', 'App\Http\Controllers\CategoryController@change_show')->name('category.change_show');
+Route::post('/category_change_check', 'App\Http\Controllers\CategoryController@change_send')->name('category.change_send');
+Route::get('/category_delete_check', 'App\Http\Controllers\CategoryController@delete_show')->name('category.delete_show');
+Route::post('/category_delete_check', 'App\Http\Controllers\CategoryController@delete_send')->name('category.delete_send');
 
 // Route::get('/completion_account', 'App\Http\Controllers\AppController@completion_account');
 
