@@ -72,9 +72,9 @@
           <input type = "hidden" name="account_name" value="{{$a->account_name}}">
           <input type = "hidden" name="mail_address" value="{{$a->mail_address}}">
           @if($a->manager_flag == FALSE)
-          <input type = "hidden" name="manager_flag" value="False">
+          <input type = "hidden" name="manager_flag" value="1">
           @else
-          <input type = "hidden" name="manager_flag" value="True">
+          <input type = "hidden" name="manager_flag" value="2">
           @endif
           
           <div id="button">
