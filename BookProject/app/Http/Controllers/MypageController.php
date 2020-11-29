@@ -14,23 +14,27 @@ class MypageController extends Controller
     function showp(){
 
         $account = new Account;
-        $lend_book = new Lend_book;
         $book = new Book;
 
         $anum =  $_COOKIE["anum"];
 
         $adata = $account::where('account_number', $anum)->first();
         
-        $lend_book->where('l_account_number', $anum);
+        $ldata = Lend_book::where('return_flag', FALSE)
+        ->where('l_account_number',$anum)
+        ->get();
+
+        // foreach($lend as $l)
+        // {
+        //     $day = $l->l_book_number;
+        //     $booknum = $l->l_book_number;
+        //     $book_name = Book::where('b_logic_flag',TRUE);
+
+        // }
+
+
         $lend_book->where('return_flag', 1);
-        $ldata = $lend_book->get();
 
-
-        if ($ldata == "")
-        {
-            setcookie("lcheck",0);
-            return view('mypage', compact('adata'));
-        }
 
         $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
         
