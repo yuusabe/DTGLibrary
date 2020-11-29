@@ -124,6 +124,7 @@ Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 //loginのため追記
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
 Route::get('/mypage', 'App\Http\Controllers\MypageController@showp');
+Route::get('/login_check', 'App\Http\Controllers\LoginController@block');
 
 
 Route::get('/testpage', 'App\Http\Controllers\TestController@getbook');

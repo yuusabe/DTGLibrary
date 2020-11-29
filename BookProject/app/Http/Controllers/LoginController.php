@@ -31,4 +31,11 @@ class LoginController extends Controller
         setcookie("login_e","ログインに失敗しました",time()+10);
         return view('login');
     }
+
+    function block(){
+        if (empty($_COOKIE["anum"]))
+        {
+            return view('login');
+        }
+    }
 }
