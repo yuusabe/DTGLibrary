@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Lend_book;
 use App\Models\Book;
+use Storage;
 
 class MypageshowController extends Controller
 {
