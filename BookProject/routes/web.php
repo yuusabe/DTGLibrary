@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/account_change_check', 'App\Http\Controllers\AppController@account_change_check');
 
 // Route::get('/account_change', 'App\Http\Controllers\AppController@account_change');
+/* Route::get('/account_change', 'App\Http\Controllers\AccountchangeController@show')->name("account_manage_change.show"); */
 
-// Route::get('/account_change', 'App\Http\Controllers\AccountChangeController@change_show')->name("account_manage_change.show");
-Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@change_post')->name("account_manage_change.post");
-// Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@if')->name("account_manage_change.if");
-//追記20201127：アカウント管理画面、アカウントリスト表示、のちにshowに合併予定
-// Route::get('/account_change', 'App\Http\Controllers\AccountChangeController@list');
+// Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@change')->name("account_change.change");
 
-Route::get('/account_change_check', 'App\Http\Controllers\AccountchangeController@change_confirm')->name("account_manage_change.confirm");
+Route::get('/account_change', 'App\Http\Controllers\AccountController@change')->name("account_manage_change.change");
+Route::post('/account_change', 'App\Http\Controllers\AccountchangeController@post')->name("account_manage_change.post");
+Route::get('/account_change_check', 'App\Http\Controllers\AccountchangeController@confirm')->name("account_manage_change.confirm");
+Route::post('/account_change_check', 'App\Http\Controllers\AccountchangeController@send')->name("account_manage_change.send");
 
 Route::get('/account_delete_check', 'App\Http\Controllers\AppController@account_delete_check');
 
@@ -35,7 +35,11 @@ Route::get('/account_delete_check', 'App\Http\Controllers\AppController@account_
 
 //追記20201126：アカウント管理画面のフォームを表示、および遷移先のルーティング
 Route::get('/account_management', 'App\Http\Controllers\AccountController@show')->name("account_manage.show");
+
+
 Route::post('/account_management', 'App\Http\Controllers\AccountController@post')->name("account_manage.post");
+
+
 //追記20201127：アカウント管理画面、アカウントリスト表示、のちにshowに合併予定
 Route::get('/account_management', 'App\Http\Controllers\AccountController@list');
 
@@ -67,15 +71,16 @@ Route::post('/book_add_check', 'App\Http\Controllers\BookaddFormController@send'
 /* Route::post('/book_add', 'App\Http\Controllers\MemoryImageController@upload');
 // */
 
-Route::get('/book_change_check', 'App\Http\Controllers\AppController@book_change_check');
+// Route::get('/book_change_check', 'App\Http\Controllers\AppController@book_change_check');
 
-Route::get('/book_change', 'App\Http\Controllers\AppController@book_change');
+// Route::get('/book_change', 'App\Http\Controllers\AppController@book_change');
 
-Route::get('/book_delete_check', 'App\Http\Controllers\AppController@book_delete_check');
+// Route::get('/book_delete_check', 'App\Http\Controllers\AppController@book_delete_check');
 
 Route::get('/category_check', 'App\Http\Controllers\AppController@category_check');
 
-Route::get('/category', 'App\Http\Controllers\AppController@category');
+// Route::get('/category', 'App\Http\Controllers\AppController@category');
+Route::get('/category', 'App\Http\Controllers\CategoryController@get_category');
 
 // Route::get('/completion_account', 'App\Http\Controllers\AppController@completion_account');
 
@@ -84,17 +89,19 @@ Route::get('/category', 'App\Http\Controllers\AppController@category');
 
 // Route::get('/completion', 'App\Http\Controllers\AppController@completion');
 
-Route::get('/information_of_book', 
-'App\Http\Controllers\AppController@information_of_book');
-Route::post('/information_of_book', 'App\Http\Controllers\ListbookController@listbook');
+// Route::get('/information_of_book', 'App\Http\Controllers\AppController@information_of_book');
+// Route::post('/information_of_book', 'App\Http\Controllers\ListbookController@listbook');
+// Route::get('/information_of_book', 'App\Http\Controllers\GetbookController@i_show')->name("book.i_show");
 
-Route::get('/lend_book', 'App\Http\Controllers\AppController@lend_book');
-Route::post('/lend_book', 'App\Http\Controllers\ListbookController@lendbook');
+// Route::get('/lend_book', 'App\Http\Controllers\AppController@lend_book');
+// Route::post('/lend_book', 'App\Http\Controllers\ListbookController@lendbook');
 
 Route::get('/lend_check', 'App\Http\Controllers\AppController@lend_check');
 
-Route::get('/list_of_books', 'App\Http\Controllers\AppController@list_of_books');
-Route::get('/list_of_books', 'App\Http\Controllers\GetbookController@getbook');
+// Route::get('/list_of_books', 'App\Http\Controllers\AppController@list_of_books');
+// Route::get('/list_of_books', 'App\Http\Controllers\GetbookController@getbook');
+// Route::post('/list_of_books', 'App\Http\Controllers\GetbookController@i_post')->name("book.i_post");
+
 
 Route::get('/login', 'App\Http\Controllers\AppController@login');
 
@@ -110,9 +117,44 @@ Route::get('/return_check', 'App\Http\Controllers\AppController@return_check');
 
 Route::get('/RPA', 'App\Http\Controllers\AppController@RPA');
 
+
 Route::get('/testpage', 'App\Http\Controllers\AppController@testpage');
 Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 
 //loginのため追記
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
 Route::get('/mypage', 'App\Http\Controllers\MypageController@showp');
+
+
+Route::get('/testpage', 'App\Http\Controllers\TestController@getbook');
+Route::post('/testpage', 'App\Http\Controllers\TestController@i_post')->name("book.i_post");
+
+//書籍一覧画面からの遷移
+//書籍一覧画面表示
+Route::get('/list_of_books', 'App\Http\Controllers\TestController@getbook')->name("book.list");
+//書籍一覧画面、各ボタン押下時
+Route::post('/list_of_books', 'App\Http\Controllers\TestController@i_post')->name("book.i_post");
+//書籍詳細画面表示
+Route::get('/information_of_book', 'App\Http\Controllers\TestController@i_show')->name("book.i_show");
+//書籍詳細画面、貸出ボタン押下時
+Route::post('/information_of_book', 'App\Http\Controllers\TestController@l_post')->name("book.l_post");
+//貸出画面表示
+Route::get('/lend_book', 'App\Http\Controllers\TestController@lend_show');
+//貸出画面、貸出ボタン押下時
+Route::post('/lend_book', 'App\Http\Controllers\TestController@lc_post')->name("book.lc_post");
+//貸出確認画面表示
+Route::get('/lend_check', 'App\Http\Controllers\TestController@lend_check_show');
+//貸出確認画面、確定ボタン押下時
+Route::post('/lend_check', 'App\Http\Controllers\TestController@lend_send')->name("book.lend_send");
+//書籍編集画面表示
+Route::get('/book_change', 'App\Http\Controllers\TestController@book_change_show');
+//書籍編集画面、各ボタン押下時
+Route::post('/book_change', 'App\Http\Controllers\TestController@check_post')->name("book.check_post");
+//書籍編集確認画面表示
+Route::get('/book_change_check', 'App\Http\Controllers\TestController@book_change_check_show');
+//書籍編集確認画面、確定ボタン押下時
+Route::post('/book_change_check', 'App\Http\Controllers\TestController@change_check_send')->name("book.change_check_send");
+//書籍削除確認画面表示
+Route::get('/book_delete_check', 'App\Http\Controllers\TestController@delete_check_show');
+//書籍削除確認画面、確定ボタン押下時
+Route::post('/book_delete_check', 'App\Http\Controllers\TestController@delete_send')->name("book.delete_send");

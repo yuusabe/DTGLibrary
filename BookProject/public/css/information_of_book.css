@@ -14,17 +14,19 @@
 #image{
   margin-top: 50px;
 }
-/*タイトル大きく表示*/
-#title{
-  font-size: x-large;
-  font-weight: bolder;
-}
 /*本情報テキスト設定*/
 #text{
   text-align: left;
   margin-left: 50px;
   color: #666;
   margin-top: 30px;
+  width: 100%;
+}
+/*タイトル大きく表示*/
+#title{
+  font-size: x-large;
+  font-weight: bolder;
+  width: 100%;
 }
 /*ボタン中央揃え*/
 #button_p{

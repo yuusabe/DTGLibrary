@@ -7,31 +7,34 @@
 
 <main>
     <div id="text">
+        <p>カテゴリを追加してください。</p>
+    </div>
+    <div id="category_a">
+        <div id="category">
+            <input type="text" id="textbox" name="category" class="form-control" placeholder="入力して下さい">
+        </div>
+    </div>
+    <div id="text">
         <p>カテゴリを編集してください。</p>
     </div>
     <div id="category_p">
-        <div id="category">
-            <div id="input_pluralBox">
-                <div id="input_plural" style="display:inline-flex">
-                  <input type="text" id="textbox" name="category" value="category" class="form-control" placeholder="入力して下さい">
-                  <input type="button" id="add_del" value="追加" class="add pluralBtn btn btn-outline-secondary">
-                  <input type="button" id="add_del" value="削除" class="del pluralBtn btn btn-outline-secondary">
+        <div id="category_ch">
+            <input type="text" id="textbox_ch" name="category" class="form-control">
+        </div>
+        <div id="category_ch">
+            <div id="button_p">
+                <div id="button">
+                    <button type="buuton" class="btn btn-outline-secondary">
+                        編集
+                    </button>
                 </div>
+                <div id="button">
+                    <button type="button" class="btn btn-outline-secondary">
+                    削除
+                </button>
             </div>
         </div>
     </div>
-    <div id="button_p">
-        <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/list_of_books'">
-                キャンセル
-            </button>
-        </div>
-        <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/category_check'">
-                変更
-            </button>
-        </div>
-     </div>
 </main>
 
 @endsection

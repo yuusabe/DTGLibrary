@@ -37,7 +37,7 @@
     <!-- Login Form -->
     <p>{{$adata -> account_name}}さん、いらっしゃいませ</p>
     <form>
-      <input type="button" value="書籍一覧へ" onclick="location.href='https://www-cf.dtg-booklibrary.tk/list_of_books'">
+      <input type="button" value="書籍一覧へ" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/list_of_books'">
     </form>
 
     <p>  </p>

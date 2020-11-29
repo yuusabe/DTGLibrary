@@ -14,29 +14,27 @@
 }
 /*囲み枠線設定*/
 #account{
-  border: double 5px #4ec4d3;
+  border: 3px solid rgb(221, 156, 71);
   border-radius: 10px;
-  height: 130px;
-  width: 600px;
+  height: 120px;
+  width: 370px;
   margin: auto;
-  background: #ffffdd;
 }
 /*囲み枠線設定・中央寄せ*/
 #book_p{
   text-align: center;
-  border: double 5px #4ec4d3;
+  border: 3px solid rgb(221, 156, 71);
   border-radius: 10px;
-  height: 250px;
-  width: 1000px;
+  height: 180px;
+  width: 470px;
   margin: auto;
-  background: #ffffdd;
 }
 /*横並び・中央寄せ*/
 #book{
+  text-align: center;
   color:#666;
   display: inline-block;
   vertical-align: top;
-  width: 40%;
 }
 /*本表紙画像設定*/
 #image{

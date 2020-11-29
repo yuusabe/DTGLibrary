@@ -23,15 +23,21 @@
             <p>書籍の情報はこちらでよろしいですか。</p>
         </div>
         <div id="button_p">
-            <div id="button">
-                <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/book_change'">
-                    キャンセル
-                </button>
-            </div>
-            <div id="button">
-                <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/completion'">
-                    確定
-                </button>
+            <form action="{{ route('book.change_check_send') }}" method="post">
+                @csrf
+                <div id="button">
+                    <button type="submit" class="btn btn-outline-secondary" name = "change">
+                        確定
+                    </button>
+                </div>
+            </form>
+            <form action="{{ route('book.change_check_send') }}" method="post">
+                @csrf
+                <div id="button">
+                    <button type="submit" class="btn btn-outline-secondary" name = "cancel">
+                        キャンセル
+                    </button>
+            </form>
             </div>
         </div>
     </div>

@@ -31,7 +31,7 @@ class GetbookController extends Controller
         // $data = (array)$obj_data;
 
         // S3の画像パス取得
-        $before = 255;
+        $before = 0;
         foreach($data as $index => $d){
             $path = Storage::disk('s3')->url($d->cover_pic);
             $d->path = $path;
@@ -47,5 +47,17 @@ class GetbookController extends Controller
         return view('list_of_books', compact('data'));
 
         Log::debug($data);
+    }
+
+    function i_post(Request $request){
+        $input = $request;
+        $request->session()->put("form_input", $input);
+        return redirect()->action('App\Http\Controllers\GetbookFormController@i_show');
+    } 
+
+    function i_show(Request $request){
+        //セッションから値を取り出す
+        $input = $request->session()->get("form_input");
+        return view('information_of_book', ["input" => $input]);
     }
 }

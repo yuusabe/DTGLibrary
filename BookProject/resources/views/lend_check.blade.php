@@ -11,12 +11,16 @@
         </div> 
         <div id="book">
             <div id="text">
-                <p id="title">タイトル：RPAのはじめかた</p>
-                <p>発行年：2001年</p>
-                <p>著者：DTG花子</p>
-                <p>出版社：技術評論社</p>
-                <p>カテゴリ：RPA</p>
-                <p>貸出期間：yyyyMMdd 〜 yyyyMMdd</p>
+                <p id="title">タイトル：{{$book_data->title}}</p>
+                <p>発行年：{{$book_data->year_of_issue}}</p>
+                <p>著者：{{$book_data->Author}}</p>
+                <p>出版社：{{$book_data->publisher}}</p>
+            @if($category_name == 'a')
+                <p>カテゴリ：分類なし</p>
+            @else
+                <p>カテゴリ：{{$category_name}}</p>
+            @endif
+                <p>貸出期間：{{$start}} 〜 {{$last}}</p>
             </div>
         </div>
     </div>
@@ -25,12 +29,12 @@
     </div>
     <div id="button_p">
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/lend_book'">
+            <button type="button" class="btn btn-outline-secondary" name = >
                 キャンセル
             </button>
         </div>
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/completion'">
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/completion'">
                 確定
             </button>
         </div>

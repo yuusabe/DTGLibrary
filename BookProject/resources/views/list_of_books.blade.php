@@ -44,41 +44,49 @@
   <input id="sbtn" id="search" type="submit" value="検索" /></div>
   </form> -->
 
-  @for(i=0, i < count($data), i++)
-  @endfor
 
   @foreach($data as $d)
-    <div id="book_p">
+  <div id="book_p">
     <div id="book">
       <img src="{{$d->path}}" id="image" alt="表紙画像" width="135" height="135" />
     </div>
     
     <div id="book">
       <div id="text">
-        <p id="category">{{$d -> category_name}}</p>
+        <p id="category">
+        {{$d -> category_name}}
+        </p>
         <p id="title">タイトル：{{$d -> title}}</p>
         <p>発行年：{{$d -> year_of_issue}}</p>
         <p>出版社：{{$d -> publisher}}</p>
-        @if($d->return_flag == TRUE)
-        <p>貸出状況：貸出可</p>
-        @elseif($d->return_flag == FALSE)
-        <p>貸出状況：貸出中</p>
+        @if(empty($d->return_flag))
+          <p>貸出状況：貸出可</p>
+        @elseif($d->return_flag == TRUE)
+          <p>貸出状況：貸出可</p>
+        @else
+          <p>貸出状況：貸出中</p>
         @endif
       </div>
     </div>
-    </div>
-    <div id="button_p">
+  </div>
+  <div id="button_p">
     <div id="button">
 
-    <form action="http://54.248.141.223/information_of_book" method="post">
-    @csrf
-    <input type = "hidden" name="number" value="{{$d->book_number}}">
-      <button type="submit" class="btn btn-outline-secondary">
-        詳細表示
-      </button>
-      </form>
+    <form action="{{ route('book.i_post') }}" method="post" enctype="multipart/form-data">
+      @csrf
+      <input type = "hidden" name="number" value="{{$d->book_number}}">
+        <button type="submit" class="btn btn-outline-secondary" name = "info">
+          詳細表示
+        </button>
+    </form>
     </div>
     <div id="button">
+    <form action="{{ route('book.i_post') }}" method="post" enctype="multipart/form-data">
+      @csrf
+      <input type = "hidden" name="number" value="{{$d->book_number}}">
+      <input type = "hidden" name="path" value="{{$d->path}}"> 
+      <input type = "hidden" name="category" value="{{$d->category_name}}">
+
       <?php
       if (!empty($_COOKIE["mflag"]))
       {
@@ -90,19 +98,19 @@
       }
       if ($mflag == "1")
       {
-          echo '<button type="button" class="btn btn-outline-danger">
+          echo '<button type="submit" class="btn btn-outline-danger" name = "change">
                 書籍編集
               </button>';
-      }
+            }
       ?>
+    </form>
     </div>
-    </div>
-    {{$d->multi}}
+  </div>
   @endforeach
 
   <div id="button_p">
     <div id="button" id="next">
-      <button type="button" class="btn btn-outline-success" onclick="location.href='https://www-cf.dtg-booklibrary.tk/information_of_book'">
+      <button type="button" class="btn btn-outline-success" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/information_of_book'">
         前
       </button>
     </div>
@@ -113,5 +121,4 @@
     </div>
   </div>
 </main>
-
 @endsection

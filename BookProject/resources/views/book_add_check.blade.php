@@ -32,11 +32,11 @@
         </div>
         <div id="button_p">
             <div id="button">
-                <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/book_add'">
+                <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/book_add'">
                     キャンセル
                 </button>
             </div>
-            <!-- <form action='https://www-cf.dtg-booklibrary.tk/completion' method="POST">
+            <!-- <form action='https://www-cf.dtg-shosekikanri2020-test.tk/completion' method="POST">
             @csrf -->
             <div id="button">
                 <button type="submit" class="btn btn-outline-secondary" >

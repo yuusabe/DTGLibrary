@@ -7,7 +7,7 @@
 <main>
   <form method="post" action="{{ route('account_manage.post') }}">
     @csrf
-    <!-- <form action="hhttps://www-cf.dtg-booklibrary.tk/account_management_check" method="get"> -->
+    <!-- <form action="https://www-cf.dtg-shosekikanri2020-test.tk/account_management_check" method="get"> -->
     <div id="text">
       <p>登録する内容を入力してください。</p>
     </div>
@@ -42,7 +42,7 @@
     </div>
     <div id="button_p">
       <div id="button">
-        <button type="submit" class="btn btn-outline-secondary" >
+        <button type="submit" class="btn btn-outline-secondary" name = "add">
           アカウント登録
         </button>
       </div>
@@ -54,8 +54,6 @@
   </div>
 
   @foreach($a_list as $a)
-  <!-- <form method="post" action="{{ route('account_manage_change.if') }}"> -->
-  @csrf
   <div id="account_p">
     <div id="account">
       <nobr id="a_text">
@@ -68,22 +66,29 @@
     </div>
     <div id="account">
       <div id="button_p">
+        <form method="post" action= "{{ route('account_manage.post') }}">
+          @csrf
+          <input type = "hidden" name="account_number" value="{{$a->account_number}}">
+          <input type = "hidden" name="account_name" value="{{$a->account_name}}">
+          <input type = "hidden" name="mail_address" value="{{$a->mail_address}}">
+          <input type = "hidden" name="manager_flag" value="{{$a->manager_flag}}">
+          
+          <div id="button">
+            <button type="submit" class="btn btn-outline-secondary" name = "change">
+              編集
+            </button>
+          </div>
+        </form>
         <div id="button">
-          <button type="submit" class="btn btn-outline-secondary" value='{{$a->account_number}}' name = 'change'>
-            編集
-          </button>
-        </div>
-        <div id="button">
-          <button type="submit" class="btn btn-outline-secondary" value='{{$a->account_number}}' name = 'delete'>
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/account_delete_check'">
             削除
           </button>
         </div>
       </div>
     </div>
   </div>
-  <!-- </form> -->
   @endforeach
-<!--   </form> -->
+  <!-- </form> -->
 </main>
 
 @endsection
