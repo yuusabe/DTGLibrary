@@ -72,7 +72,7 @@ class AccountController extends Controller
             }else{
                 $manager_flag = '管理者ユーザ';
             }
-            return view('account_delete_check',compact('num','name','manager_flag'));
+            return view('account_delete_check',compact('num','name','address','manager_flag'));
         }
 
     }
