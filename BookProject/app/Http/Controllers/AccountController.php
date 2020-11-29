@@ -182,7 +182,7 @@ class AccountController extends Controller
                 'account_name' => $input2['account_name'],
                 'mail_address' => $input2['address'],
                 'password' => $input2['password'],
-                'manager_flag' => $input2['manager_flag']
+                'manager_flag' => $input2['accounttype']
                 ]);
 
         //セッションを空にする
