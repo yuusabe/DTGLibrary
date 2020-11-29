@@ -164,9 +164,9 @@ class AccountController extends Controller
         //セッションから値を取り出す
         $input1 = $request->session()->get("accountc_input");
         $input2 = $request->session()->get("account_input_change");
-        //Log::debug($input1);
+        Log::debug($input2);
         $number = $input1[0];
-        $manager_flag_conv = $input2[3];
+        $manager_flag_conv = $input2["accounttype"];
         
 
         if($manager_flag_conv == 1){
@@ -182,7 +182,7 @@ class AccountController extends Controller
                 'account_name' => $input2['account_name'],
                 'mail_address' => $input2['address'],
                 'password' => $input2['password'],
-                'manager_flag' => $input2['manager_flag']
+                'manager_flag' => $input2['accounttype']
                 ]);
 
         //セッションを空にする
