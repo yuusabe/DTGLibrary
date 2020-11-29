@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Account;
-use App\Models\Lend_book;
 use App\Models\Book;
+use App\Models\Book_category;
+use App\Models\Category;
+use App\Models\Lend_book;
+
 use Storage;
 
 class MypageshowController extends Controller
@@ -46,5 +49,56 @@ class MypageshowController extends Controller
         // setcookie("lcheck",1);
         return view('mypage', compact('adata','ldata'));
         // return view('mypage', compact('adata'));
+    }
+
+    function return_post(Request $request){
+        $num = $request['number'];
+        $ldata = Book::where('b_logic_flag',TRUE)
+                ->where('book_number',$num)
+                ->first();
+                $category_exist = Book_category::where('bc_logic_flag',TRUE)
+                ->where('bc_book_number',$num)
+                ->exists();
+            if($category_exist == TRUE){
+                $category_data = Book_category::where('bc_logic_flag',TRUE)
+                ->where('bc_book_number',$num)
+                ->first();
+            }else{
+                $category_data = new \stdClass();
+                $category_data->bc_category_number = 0;
+            }
+                $category_exist2 = Category::where('c_logic_flag',TRUE)
+                ->where('category_number',$category_data->bc_category_number)
+                ->exists();
+            if($category_exist == TRUE){
+                $category_data2 = Category::where('c_logic_flag',TRUE)
+                ->where('category_number',$category_data->bc_category_number)
+                ->first();
+            }else{
+                $category_data2 = new \stdClass();
+                $category_data2->category_name = 'a';
+            }
+            $category_name = $category_data2->category_name;
+        return view('return_book',compact('num','ldata','category_name'));
+    }
+
+    function return_show(){
+        return view('return_book');
+    }
+
+    function return_send(Request $request){
+        if($request->has('return')){
+            $num = $request['number'];
+            Lend_book::where('return_flag',FALSE)
+                ->where('l_book_number',$num)
+                ->update([
+                    'return_flag' => TRUE
+                ]);
+            return view('completion');
+
+        }elseif($request->has('cancel')){
+            return redirect()->route('book.list');
+        }
+        
     }
 }
