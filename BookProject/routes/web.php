@@ -82,7 +82,8 @@ Route::post('/book_add_check', 'App\Http\Controllers\BookaddFormController@send'
 Route::get('/category_check', 'App\Http\Controllers\AppController@category_check');
 
 // Route::get('/category', 'App\Http\Controllers\AppController@category');
-Route::get('/category', 'App\Http\Controllers\CategoryController@get_category');
+Route::get('/category', 'App\Http\Controllers\CategoryController@list_show')->name('category.list_show');
+Route::post('/category', 'App\Http\Controllers\CategoryController@list_post')->name('category.list_post');
 
 // Route::get('/completion_account', 'App\Http\Controllers\AppController@completion_account');
 

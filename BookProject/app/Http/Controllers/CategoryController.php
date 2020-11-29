@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
-    function get_category(){
+    function list_show(){
         $category = Category::where('c_logic_flag', TRUE)
         ->get();
         $category = json_decode($category, true);
         return view('category',compact('category'));
+    }
+
+    function listpost(){
+
     }
 }
