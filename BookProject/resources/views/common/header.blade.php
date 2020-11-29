@@ -30,7 +30,14 @@
                     $mflag = "なし";
                 }
 
-                $aname = $_COOKIE["aname"];
+                if (!empty($_COOKIE["mflag"]))
+                {
+                    $aname = $_COOKIE["aname"];
+                }
+                else
+                {
+                    $error = 0/100;
+                }
 
 
                 if ($mflag == "1")
