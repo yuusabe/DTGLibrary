@@ -69,6 +69,7 @@
           document.cookie = "pass=";
           document.cookie = "atype=";
           document.cookie = "anum=";
+          document.cookie = "aname=";
           console.log(document.cookie);
         }
 
