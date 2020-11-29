@@ -126,7 +126,7 @@ Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
 
 //20201130追記　コントローラ変更
-Route::get('/mypage', 'App\Http\Controllers\MypageshowController@showp');
+Route::get('/mypage', 'App\Http\Controllers\MypageshowController@showp')->name("mypage.showp");
 Route::post('/mypage', 'App\Http\Controllers\MypageshowController@return_post')->name("mypage.return_post");
 Route::get('/return_book', 'App\Http\Controllers\MypageshowController@return_show');
 Route::post('/return_book', 'App\Http\Controllers\MypageshowController@return_send')->name("mypage.return_send");

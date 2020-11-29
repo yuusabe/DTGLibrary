@@ -97,7 +97,7 @@ class MypageshowController extends Controller
             return view('completion');
 
         }elseif($request->has('cancel')){
-            return redirect()->route('book.list');
+            return redirect()->route('mypage.showp');
         }
         
     }
