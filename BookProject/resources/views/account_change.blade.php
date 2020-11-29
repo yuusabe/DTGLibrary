@@ -24,7 +24,7 @@
           <div id="tb">
             <p>パスワード</p>
           </div>
-          <input type="text" id="tbox" placeholder="password">
+          <input type="text" id="tbox"name="password" placeholder="password">
           <div id="radio">
             <div id="tb">
               <p>管理者権限</p>
