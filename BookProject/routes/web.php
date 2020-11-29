@@ -124,8 +124,11 @@ Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 //loginのため追記
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
 
-//20201130追記　テスト用コントローラ変更
+//20201130追記　コントローラ変更
 Route::get('/mypage', 'App\Http\Controllers\MypageshowController@showp');
+Route::post('/mypage', 'App\Http\Controllers\MypageshowController@return_post')->name("mypage.return_post");
+Route::get('/return_book', 'App\Http\Controllers\MypageshowController@return_show');
+Route::post('/return_book', 'App\Http\Controllers\MypageshowController@return_send')->name("mypage.return_send");
 
 
 Route::get('/testpage', 'App\Http\Controllers\TestController@getbook');

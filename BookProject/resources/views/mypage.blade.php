@@ -34,9 +34,13 @@
                     </div>
     </div>
     <div id="boo">
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/return_book'">
-            返却手続きへ
-        </button>
+        <form action="{{ route('mypage.return_post') }}" method="post">
+            @csrf
+            <input type = "hidden" name="number" value="{{$l->lend_number}}">
+            <button type="submit" class="btn btn-outline-secondary">
+                返却手続きへ
+            </button>
+        </form>
     </div>
     @endforeach
 </main>
