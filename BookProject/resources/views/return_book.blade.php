@@ -35,7 +35,7 @@
             @csrf
             <div id="button">
                 <input type = "hidden" name="number" value="{{$num}}">
-                <button type="button" class="btn btn-outline-secondary" name = "return">
+                <button type="submit" class="btn btn-outline-secondary" name = "return">
                     返却
                 </button>
             </div>
