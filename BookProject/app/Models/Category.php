@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Category extends Model
 {
     protected $table = 'categories';
-
+    
     protected $fillable = [
         'category_number',
         'category_name',

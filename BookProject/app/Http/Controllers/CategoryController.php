@@ -24,6 +24,8 @@ class CategoryController extends Controller
             $category_table = new Category();
             //テーブルのカウント
             $count_category=Category::get()->count();
+            $count_category++;
+            
             $category_table->create([
                 'category_number' => $count_category,
                 'category_name'=> $category,
