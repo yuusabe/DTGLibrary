@@ -63,7 +63,7 @@ class AccountController extends Controller
         }
 
     }
-    //書籍登録関連画面
+    //アカウント登録関連画面
     function confirm(Request $request){
             //セッションから値を取り出す
             $input = $request->session()->get("account_input");
@@ -133,5 +133,69 @@ class AccountController extends Controller
             return redirect()->action('App\Http\Controllers\AccountController@show');
         }
         return view("account_change",["input" => $input]);
-}
+    }
+    
+    function post1(Request $request){
+        $input1 = $request->only($this->formItems);
+            
+        $validator = Validator::make($input1, $this->validator);
+        if($validator->fails()){
+            return redirect()->action('App\Http\Controllers\AccountController@show')
+                ->withInput()
+                ->withErrors($validator);
+        }
+        
+        //セッションに書き込む
+        $request->session()->put("account_input_change", $input1);
+        return redirect()->action('App\Http\Controllers\AccountController@confirm1');
+    }
+   
+    function confirm1(Request $request){
+        //セッションから値を取り出す
+        $input1 = $request->session()->get("account_input_change");
+        //セッションに値が無い時はフォームに戻る
+        if(!$input){
+            return redirect()->action('App\Http\Controllers\AccountController@show');
+        }
+        return view("account_change_check",["input1" => $input1]);
+    }
+
+    function send1(Request $request){
+        //セッションを空にする
+        $request->session()->forget("account_input_change");
+        return view("completion");
+
+
+
+        //モデルクラスのインスタンス化
+        $account_table = new Account();
+        //テーブルのカウント
+        $count_account=Account::get()->count();
+        //登録アカウントのID用意
+        $count_account++;
+        //データ挿入
+        if($input["accounttype"]=="一般ユーザ"){
+            $account_table->create([
+                'account_number' => $count_account,
+                'account_name' => $input["account_name"],
+                'mail_address' => $input["address"],
+                'password' => $input["password"],
+                'manager_flag' => FALSE,
+                'a_logic_flag' => true
+            ]);
+        }else{
+            $account_table->create([
+                'account_number' => $count_account,
+                'account_name' => $input["account_name"],
+                'mail_address' => $input["address"],
+                'password' => $input["password"],
+                'manager_flag' => TRUE,
+                'a_logic_flag' => TRUE
+            ]);
+        }
+        //セッションを空にする
+        $request->session()->forget("account_input");
+        return view("completion");
+    }
+
 }

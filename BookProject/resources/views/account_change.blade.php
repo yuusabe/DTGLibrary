@@ -10,7 +10,7 @@
     <div id="text">
       <p>編集する内容を入力してください。</p>
     </div>
-    <form method="post" action="{{ route('account_manage.post') }}">
+    <form method="post" action="{{ route('account_change.post') }}">
       @csrf
       <div id=tb_p>          
           <div id="tb">
@@ -24,7 +24,7 @@
           <div id="tb">
             <p>パスワード</p>
           </div>
-          <input type="text" id="tbox" placeholder="password">
+          <input type="text" id="tbox"name="password" placeholder="password">
           <div id="radio">
             <div id="tb">
               <p>管理者権限</p>
