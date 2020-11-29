@@ -28,7 +28,7 @@ class MypageshowController extends Controller
 
         foreach($ldata as $l)
         {
-            $day = $l->l_book_number;
+            $day = $l->return_day;
             $booknum = $l->l_book_number;
             $book= Book::where('b_logic_flag',TRUE)
             ->where('book_number', $booknum)
@@ -38,10 +38,10 @@ class MypageshowController extends Controller
 
 
         
-        $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
+        // $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
         
-        setcookie("lcheck",1);
-        return view('mypage', compact('adata','ldata','bdata'));
+        // setcookie("lcheck",1);
+        return view('mypage', compact('adata','ldata'));
         // return view('mypage', compact('adata'));
     }
 }

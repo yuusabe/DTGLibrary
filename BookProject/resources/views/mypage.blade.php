@@ -23,21 +23,22 @@
     <div id="text">
         <p>貸出中書籍</p>
     </div>
+    @foreach($ldata as $l)
     <div id="book_p">
     <div id="book">
-    @foreach($ldata as $l)
                         <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
                     </div>
                     <div id="book">
                         <p>タイトル：{{$l -> book_name}}</p>
                         <p>返却期限：{{$l -> return_day}}</p>
-                    </div>;
+                    </div>
     </div>
     <div id="boo">
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/return_book'">
             返却手続きへ
         </button>
     </div>
+    @endforeach
 </main>
 
 @endsection
