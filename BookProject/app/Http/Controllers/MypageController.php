@@ -28,10 +28,11 @@ class MypageController extends Controller
 
         if ($ldata == "")
         {
-            $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
             setcookie("lcheck",0);
             return view('mypage', compact('adata'));
         }
+
+        $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
         
         setcookie("lcheck",1);
         return view('mypage', compact('adata','ldata','bdata'));
