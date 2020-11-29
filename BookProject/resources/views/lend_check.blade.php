@@ -28,7 +28,7 @@
         <p>貸出書籍の内容はこれでよろしいでしょうか。</p>
     </div>
     <div id="button_p">
-    <form action="{{ route('book.lc_post') }}" method="post">
+    <form action="{{ route('book.lend_send') }}" method="post">
             @csrf
         <div id="button">
             <button type="submit" class="btn btn-outline-secondary" name = "cancel">
@@ -36,7 +36,7 @@
             </button>
         </div>
     </form>
-    <form action="{{ route('book.lc_post') }}" method="post">
+    <form action="{{ route('book.lend_send') }}" method="post">
             @csrf
         <div id="button">
             <input type = "hidden" name="number" value="{{$num}}">

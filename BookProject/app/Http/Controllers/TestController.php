@@ -275,6 +275,9 @@ class TestController extends Controller
                 'return_flag' => FALSE 
             ]);
         return view('completion');
+        
+        }elseif($request->has('cancel')){
+            return redirect()->route('book.list');
         }
     }
 
