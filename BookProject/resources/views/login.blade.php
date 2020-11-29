@@ -29,7 +29,8 @@
         </div>
       </div> -->
 
-      <input type="submit" class="fadeIn fourth" value="ログイン" onclick="writeCookie()">
+      <input type="submit" class="fadeIn fourth" value="ログイン">
+      <input type="submit" class="fadeIn fourth" value="クッキー削除" onclick="deleteCookie()">
       
 
       <!-- <button onclick="readCookie()">読み込み</button><br>
@@ -67,6 +68,7 @@
           document.cookie = "email=";
           document.cookie = "pass=";
           document.cookie = "atype=";
+          document.cookie = "anum=";
           console.log(document.cookie);
         }
 

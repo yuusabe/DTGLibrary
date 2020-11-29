@@ -29,14 +29,9 @@
                 {
                     $mflag = "なし";
                 }
-                if (!empty($_COOKIE["aname"]))
-                {
-                  $aname = $_COOKIE["aname"];
-                }
-                else
-                {
-                    $aname = "なし";
-                }
+
+                $aname = $_COOKIE["aname"];
+
 
                 if ($mflag == "1")
                 {
