@@ -27,9 +27,9 @@
         <div class="form-group" id="datepicker-daterange">
             <div class="col-sm-9 form-inline" id="lend">
                 <div class="input-daterange input-group" id="datepicker">
-                    <input type="date" class="input-sm form-control" pattern=”[0-9]{4}-[0-9]{2}-[0-9]{2}” name="start" id="dbox" value="<?php echo date('Y-m-d');?>"/>
+                    <input type="date" class="input-sm form-control" pattern=”[0-9]{4}/[0-9]{2}/[0-9]{2}” name="start" id="dbox" value="<?php echo date('Y-m-d');?>"/>
                     <span class="input-group-addon" id="dbox">　〜　</span>
-                    <input type="date" class="input-sm form-control" pattern=”[0-9]{4}-[0-9]{2}-[0-9]{2}”　name="last" id="dbox" value="<?php echo date('Y-m-d');?>"/>
+                    <input type="date" class="input-sm form-control" pattern=”[0-9]{4}/[0-9]{2}/[0-9]{2}”　name="last" id="dbox" value="<?php echo date('Y-m-d');?>"/>
                 </div>
             </div>
         </div>
