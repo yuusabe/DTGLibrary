@@ -166,7 +166,7 @@ class AccountController extends Controller
         $input2 = $request->session()->get("account_input_change");
         //Log::debug($input1);
         $number = $input1[0];
-        $manager_flag_conv = $input2['manager_flag'];
+        $manager_flag_conv = $input2[3];
         
 
         if($manager_flag_conv == 1){
