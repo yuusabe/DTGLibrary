@@ -58,11 +58,10 @@ class CategoryController extends Controller
             ->update([
                 'category_name' =>$category
             ]);
-
+            return view('completion');
         }elseif($request->has('cancel')){
             return redirect()->route('category.list_show');
         }
-        return view('completion');
     }
 
     function delete_show(){

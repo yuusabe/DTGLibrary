@@ -30,7 +30,10 @@ Route::post('/account_change_check', 'App\Http\Controllers\AccountController@sen
 /* Route::get('/account_change_check', 'App\Http\Controllers\AccountchangeController@confirm')->name("account_manage_change.confirm");
 Route::post('/account_change_check', 'App\Http\Controllers\AccountchangeController@send')->name("account_manage_change.send");
  */
-Route::get('/account_delete_check', 'App\Http\Controllers\AppController@account_delete_check');
+
+Route::get('/account_delete_check', 'App\Http\Controllers\AccountController@delete_show');
+Route::get('/account_delete_check', 'App\Http\Controllers\AccountController@delete_send')->name('account_delete.send');
+
 
 /* Route::get('/account_management_check', 'App\Http\Controllers\AppController@account_management_check'); */
 
@@ -43,8 +46,8 @@ Route::get('/account_management', 'App\Http\Controllers\AccountController@show')
 Route::post('/account_management', 'App\Http\Controllers\AccountController@post')->name("account_manage.post");
 
 
-//追記20201127：アカウント管理画面、アカウントリスト表示、のちにshowに合併予定
-Route::get('/account_management', 'App\Http\Controllers\AccountController@list');
+//追記20201127：アカウント管理画面、アカウントリスト表示、showに合併済
+// Route::get('/account_management', 'App\Http\Controllers\AccountController@list');
 
 Route::get('/account_management_check', 'App\Http\Controllers\AccountController@confirm')->name("account_manage.confirm");
 

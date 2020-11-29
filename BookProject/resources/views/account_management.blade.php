@@ -83,11 +83,22 @@
             </button>
           </div>
         </form>
-        <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_delete_check'">
-            削除
-          </button>
-        </div>
+        <form method="post" action= "{{ route('account_manage.post') }}">
+          @csrf
+          <div id="button">
+            <input type = "hidden" name="number" value="{{$a->account_number}}">
+            <input type = "hidden" name="account_name" value="{{$a->account_name}}">
+            <input type = "hidden" name="mail_address" value="{{$a->mail_address}}">
+            @if($a->manager_flag == FALSE)
+            <input type = "hidden" name="manager_flag" value="1">
+            @else
+            <input type = "hidden" name="manager_flag" value="2">
+            @endif
+            <button type="submit" class="btn btn-outline-secondary" name = "delete">
+              削除
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -24,7 +24,10 @@ class AccountController extends Controller
     ];
 
     function show(){
-        return view('account_management');
+        $a_list = Account::select()
+        ->where('a_logic_flag',TRUE)
+        ->get();
+        return view('account_management', compact('a_list'));
     }
     function post(Request $request){
 
@@ -60,6 +63,16 @@ class AccountController extends Controller
 
             $request->session()->put("accountc_input",$input_change);
             return redirect()->action('App\Http\Controllers\AccountController@change');
+        }elseif($request->has('delete')){
+            $num = $request['number'];
+            $name = $request['account_name'];
+            $address = $request['account_name'];
+            if($request['manager_flag'] == 1){
+                $manager_flag = '一般ユーザ';
+            }else{
+                $manager_flag = '管理者ユーザ';
+            }
+            return view('account_delete_check',compact('num','name','manager_flag'));
         }
 
     }
@@ -115,15 +128,15 @@ class AccountController extends Controller
         return view("completion");
     }
 
-    function list(){
-        $a_list = Account::select()
-        ->where('a_logic_flag',TRUE)
-        ->get();
-        return view('account_management', compact('a_list'));
-    }
+    // function list(){
+    //     $a_list = Account::select()
+    //     ->where('a_logic_flag',TRUE)
+    //     ->get();
+    //     return view('account_management', compact('a_list'));
+    // }
 
 
-    //書籍編集関連画面
+    //アカウント編集関連画面
     function change(Request $request){
         //セッションから値を取り出す
         $input = $request->session()->get("accountc_input");
@@ -190,4 +203,22 @@ class AccountController extends Controller
         return view("completion");
     }
 
+    function delete_show(){
+        return view('account_delete_check');
+    }
+
+    function delete_send(Request $request){
+        if($request->has('delete')){
+            $num = $request['number'];
+            Account::where('a_logic_flag',TRUE)
+            ->where('account_number',$num)
+            ->update([
+                'a_logic_flag' => FALSE
+            ]);
+            return view('completion');
+
+        }elseif($request->has('cancel')){
+            return redirect()->route('account_manage.show');
+        }
+    }
 }
