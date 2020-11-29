@@ -32,7 +32,7 @@ Route::post('/account_change_check', 'App\Http\Controllers\AccountchangeControll
  */
 
 Route::get('/account_delete_check', 'App\Http\Controllers\AccountController@delete_show');
-Route::get('/account_delete_check', 'App\Http\Controllers\AccountController@delete_send')->name('account_delete.send');
+Route::post('/account_delete_check', 'App\Http\Controllers\AccountController@delete_send')->name('account_delete.send');
 
 
 /* Route::get('/account_management_check', 'App\Http\Controllers\AppController@account_management_check'); */
