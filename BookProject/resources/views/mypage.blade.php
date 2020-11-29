@@ -25,20 +25,20 @@
     </div>
     <div id="book_p">
         <?php
-            // $lcheck =  $_COOKIE["lcheck"];
+            $lcheck =  $_COOKIE["lcheck"];
 
-            // if ($lcheck == "1")
-            // {
-            //     echo '<div id="book">
-            //             <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
-            //         </div>
-            //         <div id="book">
-            //             <p>タイトル：{{$bdata -> title}}</p>
-            //             <p>発行年：{{$bdata -> year_of_issue}}</p>
-            //             <p>著者：{{$bdata -> Author}}</p>
-            //             <p>返却期限：{{$ldata -> return_day}}</p>
-            //         </div>';
-            // }
+            if ($lcheck == "1")
+            {
+                echo '<div id="book">
+                        <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
+                    </div>
+                    <div id="book">
+                        <p>タイトル：{{$bdata -> title}}</p>
+                        <p>発行年：{{$bdata -> year_of_issue}}</p>
+                        <p>著者：{{$bdata -> Author}}</p>
+                        <p>返却期限：{{$ldata -> return_day}}</p>
+                    </div>';
+            }
         ?>
     </div>
     <div id="boo">
