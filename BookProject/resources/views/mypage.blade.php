@@ -31,7 +31,8 @@
                     <div id="book">
                         <p>タイトル：{{$l -> book_name}}</p>
                         <p>返却期限：{{$l -> return_day}}</p>
-                    </div>;
+                    </div>
+    @endforeach
     </div>
     <div id="boo">
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/return_book'">
