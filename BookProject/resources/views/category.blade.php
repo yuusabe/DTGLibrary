@@ -37,6 +37,7 @@
                     <form action="{{ route('category.list_post') }}" method="post">
                         @csrf
                         <div id="button">
+                            <input type = "hidden" name="number" value="{{$c['category_number']}}">
                             <button type="submit" class="btn btn-outline-secondary" name = "change">
                                 編集
                             </button>
@@ -45,6 +46,7 @@
                     <form action="{{ route('category.list_post') }}" method="post">
                         @csrf
                         <div id="button">
+                            <input type = "hidden" name="number" value="{{$c['category_number']}}">
                             <button type="submit" class="btn btn-outline-secondary" name = "delete">
                                 削除
                             </button>
