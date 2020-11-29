@@ -170,11 +170,11 @@ class AccountController extends Controller
         
 
         if($manager_flag_conv == 1){
-            $replacements1 = array(3 => False);
+            $replacements1 = array("accounttype" => False);
             $input2 = array_replace($input2,$replacements1);
             Log::debug($input2);
         }else{
-            $replacements2 = array(3 => True);
+            $replacements2 = array("accounttype" => True);
             $input2 = array_replace($input2,$replacements2);
         }
 
