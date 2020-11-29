@@ -30,7 +30,7 @@
     <div id="category_p">
         @foreach($category as $c)
             <div id="category_ch">
-                <input type="text" id="textbox_ch" name="category" class="form-control" value = "{{c['category_name']}}">
+                <input type="text" id="textbox_ch" name="category" class="form-control" value = "{{$c['category_name']}}">
             </div>
             <div id="category_ch">
                 <div id="button_p">
