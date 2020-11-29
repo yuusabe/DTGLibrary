@@ -19,8 +19,8 @@
       function writeCookie() {
         var email_v = email.value;
         var pass_v = pass.value;
-        document.cookie = "email=" + email_v + "; domain=www-cf.dtg-shosekikanri2020-test.tk; path=/";
-        document.cookie = "pass=" + pass_v + "; domain=www-cf.dtg-shosekikanri2020-test.tk; path=/";
+        document.cookie = "email=" + email_v + "; domain=www-cf.dtg-booklibrary.tk; path=/";
+        document.cookie = "pass=" + pass_v + "; domain=www-cf.dtg-booklibrary.tk; path=/";
         console.log(document.cookie);
       }
 
@@ -37,7 +37,7 @@
     <!-- Login Form -->
     <p>{{$adata -> account_name}}さん、いらっしゃいませ</p>
     <form>
-      <input type="button" value="書籍一覧へ" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/list_of_books'">
+      <input type="button" value="書籍一覧へ" onclick="location.href='https://www-cf.dtg-booklibrary.tk/list_of_books'">
     </form>
 
     <p>  </p>

@@ -7,7 +7,7 @@
 <main>
   <form method="post" action="{{ route('account_manage.post') }}">
     @csrf
-    <!-- <form action="https://www-cf.dtg-shosekikanri2020-test.tk/account_management_check" method="get"> -->
+    <!-- <form action="https://www-cf.dtg-booklibrary.tk/account_management_check" method="get"> -->
     <div id="text">
       <p>登録する内容を入力してください。</p>
     </div>
@@ -80,7 +80,7 @@
           </div>
         </form>
         <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/account_delete_check'">
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_delete_check'">
             削除
           </button>
         </div>

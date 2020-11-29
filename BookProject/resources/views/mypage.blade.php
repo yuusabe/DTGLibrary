@@ -16,7 +16,7 @@
         </div>
     </div>
     <div id="boo">
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/password_change'">
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/password_change'">
             パスワード変更
         </button>
     </div>
@@ -25,24 +25,24 @@
     </div>
     <div id="book_p">
         <?php
-            // $lcheck =  $_COOKIE["lcheck"];
+            $lcheck =  $_COOKIE["lcheck"];
 
-            // if ($lcheck == "1")
-            // {
-            //     echo '<div id="book">
-            //             <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
-            //         </div>
-            //         <div id="book">
-            //             <p>タイトル：{{$bdata -> title}}</p>
-            //             <p>発行年：{{$bdata -> year_of_issue}}</p>
-            //             <p>著者：{{$bdata -> Author}}</p>
-            //             <p>返却期限：{{$ldata -> return_day}}</p>
-            //         </div>';
-            // }
+            if ($lcheck == "1")
+            {
+                echo '<div id="book">
+                        <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
+                    </div>
+                    <div id="book">
+                        <p>タイトル：{{$bdata -> title}}</p>
+                        <p>発行年：{{$bdata -> year_of_issue}}</p>
+                        <p>著者：{{$bdata -> Author}}</p>
+                        <p>返却期限：{{$ldata -> return_day}}</p>
+                    </div>';
+            }
         ?>
     </div>
     <div id="boo">
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/return_book'">
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/return_book'">
             返却手続きへ
         </button>
     </div>

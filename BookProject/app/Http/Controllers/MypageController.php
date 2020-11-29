@@ -21,20 +21,21 @@ class MypageController extends Controller
 
         $adata = $account::where('account_number', $anum)->first();
         
-        // $book->where('l_account_number', $anum);
-        // $book->where('return_flag', 1);
-        // $ldata = $book->get();
+        $lend_book->where('l_account_number', $anum);
+        $lend_book->where('return_flag', 1);
+        $ldata = $lend_book->get();
 
-        // $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
 
-        // if ($ldata == "")
-        // {
-        //     setcookie("lcheck",0);
-        //     return view('login', compact('adata'));
-        // }
+        if ($ldata == "")
+        {
+            setcookie("lcheck",0);
+            return view('mypage', compact('adata'));
+        }
+
+        $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
         
-        // setcookie("lcheck",1);
-        // return view('login', compact('adata','ldata','bdata'));
-        return view('mypage', compact('adata'));
+        setcookie("lcheck",1);
+        return view('mypage', compact('adata','ldata','bdata'));
+        // return view('mypage', compact('adata'));
     }
 }

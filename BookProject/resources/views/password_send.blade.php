@@ -16,12 +16,12 @@
     </div>
     <div id="botton_p">
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/login'">
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/login'">
                 キャンセル
             </button>
         </div>
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/completion'">
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/completion'">
                 送信
             </button>
         </div>
