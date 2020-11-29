@@ -41,7 +41,7 @@ class MypageshowController extends Controller
         // $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
         
         // setcookie("lcheck",1);
-        return view('mypage', compact('adata','ldata','bdata'));
+        return view('mypage', compact('adata','ldata'));
         // return view('mypage', compact('adata'));
     }
 }
