@@ -20,7 +20,6 @@ class CategoryController extends Controller
     function list_post(Request $request){
         if($request->has('add')){
             $category = $request['category'];
-            $category_table = $category['category'];
             //モデルクラスのインスタンス化
             $category_table = new Category();
             //テーブルのカウント
