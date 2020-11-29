@@ -33,9 +33,7 @@ class MypageController extends Controller
         // }
 
 
-        $lend_book->where('return_flag', 1);
-
-
+        
         $bdata = $book::where('book_number', $ldata["l_book_number"])->first();
         
         setcookie("lcheck",1);
