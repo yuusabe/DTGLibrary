@@ -52,7 +52,11 @@ class MypageshowController extends Controller
     }
 
     function return_post(Request $request){
-        $num = $request['number'];
+        $l_num = $request['number'];
+        $b_number = Lend_book::where('lend_number',$l_num)
+        ->first();
+        $num = $b_number->l_book_number;
+
         $ldata = Book::where('b_logic_flag',TRUE)
                 ->where('book_number',$num)
                 ->first();
