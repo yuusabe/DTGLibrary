@@ -28,7 +28,7 @@ class MypageshowController extends Controller
 
         foreach($ldata as $l)
         {
-            $day = $l->l_book_number;
+            $day = $l->return_day;
             $booknum = $l->l_book_number;
             $book= Book::where('b_logic_flag',TRUE)
             ->where('book_number', $booknum)
