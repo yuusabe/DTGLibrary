@@ -12,7 +12,6 @@
     </div>
     <form method="post" action="{{ route('account_manage_change.post') }}">
       @csrf
-      var_dump($a_list as $a)
       <div id=tb_p>          
           <div id="tb">
             <p>アカウント名</p>
