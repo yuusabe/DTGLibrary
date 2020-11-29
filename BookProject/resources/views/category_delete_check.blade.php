@@ -5,14 +5,14 @@
 @section('body')
 
 <main>
-    <div id="category">
+    <!-- <div id="category">
         <p>カテゴリ情報表示</p>
         <div id="c_text"> 
             <p>{{$category}}</p>
        </div>
-    </div>
+    </div> -->
     <div id="text">
-        <p>こちらのカテゴリを削除してもよろしいですか？</p>
+        <p>このカテゴリを削除してもよろしいですか？</p>
     </div>
     <div id="button_p">
         <form action="{{ route('category.delete_send') }}" method="post">
