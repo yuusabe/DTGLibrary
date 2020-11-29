@@ -25,6 +25,7 @@
             <form action="{{ route('book.delete_send') }}" method="post">
                 @csrf
                 <div id="button">
+                <input type = "hidden" name="number" value="{{$num}}">
                     <button type="submit" class="btn btn-outline-secondary" name = "delete">
                         確定
                     </button>

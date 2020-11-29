@@ -256,8 +256,29 @@ class TestController extends Controller
 
     //貸出確認画面、確定ボタン押下時
     function lend_send(Request $request){
-
+        if($request->has('lend')){
+            $num = $request['number'];
+            $last = $request['last'];
+            //モデルクラスのインスタンス化
+            $lend_table = new Lend_book();
+            //テーブルのカウント
+            $count_lend=Lend_book::get()->count();
+            //登録書籍のID用意
+            $count_lend++;
+            $anum =  $_COOKIE["anum"];
+            //データ挿入
+            $lend_table->create([
+                'lend_number' => $count_lend,
+                'l_book_number' => $num,
+                'l_account_number' => $anum,
+                'return_day' => $last,
+                'return_flag' => FALSE 
+            ]);
         return view('completion');
+        
+        }elseif($request->has('cancel')){
+            return redirect()->route('book.list');
+        }
     }
 
     //書籍編集画面表示

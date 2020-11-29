@@ -28,15 +28,23 @@
         <p>貸出書籍の内容はこれでよろしいでしょうか。</p>
     </div>
     <div id="button_p">
+    <form action="{{ route('book.lend_send') }}" method="post">
+            @csrf
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary" name = >
+            <button type="submit" class="btn btn-outline-secondary" name = "cancel">
                 キャンセル
             </button>
         </div>
+    </form>
+    <form action="{{ route('book.lend_send') }}" method="post">
+            @csrf
         <div id="button">
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/completion'">
+            <input type = "hidden" name="number" value="{{$num}}">
+            <input type = "hidden" name="last" value="{{$last}}">
+            <button type="submit" class="btn btn-outline-secondary" name = "lend">
                 確定
             </button>
+    </form>
         </div>
     </div>
 </main>
