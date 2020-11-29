@@ -29,8 +29,8 @@
             <div id="tb">
               <p>管理者権限</p>
             </div>
-              <input type="radio" name="accounttype" value="1" @if (isset($input[3])->accounttype == 1) checked @endif>一般ユーザ
-              <input type="radio" name="accounttype" value="2" @if (isset($input[3])->accounttype == 2) checked @endif>管理者ユーザ
+              <input type="radio" name="accounttype" value="1" @if (isset($input[3])) checked @endif>一般ユーザ
+              <input type="radio" name="accounttype" value="2" @if (isset($input[3])) checked @endif>管理者ユーザ
           </div>
         </div>
       <div id="button_p">
