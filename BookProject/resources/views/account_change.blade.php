@@ -10,7 +10,7 @@
     <div id="text">
       <p>編集する内容を入力してください。</p>
     </div>
-    <form method="post" action="{{ route('account_manage_change.post') }}">
+    <form method="post" action="{{ route('account_manage.post') }}">
       @csrf
       <div id=tb_p>          
           <div id="tb">
@@ -41,7 +41,7 @@
         </div>
       <div id="button_p">
         <div id="button">
-          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/account_management'">
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/account_management'">
             キャンセル
           </button>
         </div>
