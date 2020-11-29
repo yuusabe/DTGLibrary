@@ -35,6 +35,6 @@ class MypageController extends Controller
         
         // setcookie("lcheck",1);
         // return view('login', compact('adata','ldata','bdata'));
-        return view('login', compact('adata'));
+        return view('mypage', compact('adata'));
     }
 }
