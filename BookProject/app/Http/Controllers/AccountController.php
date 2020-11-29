@@ -162,18 +162,31 @@ class AccountController extends Controller
 
     function send1(Request $request){
         //セッションから値を取り出す
-        $input1 = $request->session()->get("account_input_change");
+        $input1 = $request->session()->get("accountc_input");
+        $input2 = $request->session()->get("account_input_change");
+        //Log::debug($input1);
         $number = $input1[0];
-        Account::where(‘a_logic_flag’, TRUE)
+        $manager_flag_conv = $input2['manager_flag'];
+        
+
+        if($manager_flag_conv == 1){
+            $replacements1 = array(3 => False);
+            $input2 = array_replace($input2,$replacements1)
+        }else{
+            $replacements2 = array(3 => True);
+            $input2 = array_replace($input2,$replacements2)
+        }
+
+        Account::where('a_logic_flag', TRUE)
         ->where('account_number', $number)->update([
-                'account_name' => $input1['account_name'],
-                'mail_address' => $input1['mail_address'],
-                'password' => $input1['password'],
-                'manager_flag' => $input1['manager_flag']
+                'account_name' => $input2['account_name'],
+                'mail_address' => $input2['address'],
+                'password' => $input2['password'],
+                'manager_flag' => $input2['manager_flag']
                 ]);
 
         //セッションを空にする
-        $request->session()->forget("account_input");
+        $request->session()->forget("account_input_change");
         return view("completion");
     }
 
