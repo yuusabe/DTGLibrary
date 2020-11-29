@@ -6,10 +6,9 @@
 
 <main>
     <div id="category">
-        <p>カテゴリ情報表示</p>
-        <div id="c_text"> 
-            <p>{{$category}}</p>
-       </div>
+        <p>{{$category}}</p>
+        <!-- <div id="c_text"> 
+       </div> -->
     </div>
     <div id="text">
         <p>カテゴリ変更の内容はこちらでよろしいですか？</p>

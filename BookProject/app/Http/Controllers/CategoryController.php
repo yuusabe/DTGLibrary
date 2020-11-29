@@ -25,7 +25,7 @@ class CategoryController extends Controller
             //テーブルのカウント
             $count_category=Category::get()->count();
             $count_category++;
-            
+
             $category_table->create([
                 'category_number' => $count_category,
                 'category_name'=> $category,
@@ -62,6 +62,7 @@ class CategoryController extends Controller
         }elseif($request->has('cancel')){
             return redirect()->route('category.list_show');
         }
+        return view('completion');
     }
 
     function delete_show(){
@@ -77,6 +78,7 @@ class CategoryController extends Controller
             ->update([
                 'c_logic_flag' => FALSE
             ]);
+            return view('completion');
 
         }elseif($request->has('cancel')){
             return redirect()->route('category.list_show');

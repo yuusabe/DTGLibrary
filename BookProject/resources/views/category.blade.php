@@ -29,20 +29,20 @@
     </div>
     @foreach($category as $c)
         <div id="category_p">
-            <div id="category_ch">
-                <input type="text" id="textbox_ch" name="category" class="form-control" value = "{{$c['category_name']}}">
-            </div>
-            <div id="category_ch">
-                <div id="button_p">
-                    <form action="{{ route('category.list_post') }}" method="post">
-                        @csrf
+            <form action="{{ route('category.list_post') }}" method="post">
+                @csrf
+                <div id="category_ch">
+                    <input type="text" id="textbox_ch" name="category" class="form-control" value = "{{$c['category_name']}}">
+                </div>
+                <div id="category_ch">
+                    <div id="button_p">
                         <div id="button">
                             <input type = "hidden" name="number" value="{{$c['category_number']}}">
                             <button type="submit" class="btn btn-outline-secondary" name = "change">
                                 編集
                             </button>
                         </div>
-                    </form>
+            </form>
                     <form action="{{ route('category.list_post') }}" method="post">
                         @csrf
                         <div id="button">
