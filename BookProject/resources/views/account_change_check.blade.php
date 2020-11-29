@@ -7,9 +7,9 @@
   <form method="post" action="{{ route('account_change.send1') }}">
     @csrf
     <div id="account">
-      <p>アカウント名：{{ $input["account_name"] }}</p>
-      <p>メールアドレス：{{ $input["address"] }}</p>
-      <p>アカウントタイプ：{{ $input["accounttype"] }}</p>
+      <p>アカウント名：{{ $input1["account_name"] }}</p>
+      <p>メールアドレス：{{ $input1["address"] }}</p>
+      <p>アカウントタイプ：{{ $input1["accounttype"] }}</p>
     </div>
     <div id="text">
       <p>アカウント編集の変更内容はこちらでよろしいでしょうか。</p>
