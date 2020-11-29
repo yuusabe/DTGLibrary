@@ -123,7 +123,9 @@ Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 
 //loginのため追記
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
-Route::get('/mypage', 'App\Http\Controllers\MypageController@showp');
+
+//20201130追記　テスト用コントローラ変更
+Route::get('/mypage', 'App\Http\Controllers\MypageshowController@showp');
 
 
 Route::get('/testpage', 'App\Http\Controllers\TestController@getbook');
