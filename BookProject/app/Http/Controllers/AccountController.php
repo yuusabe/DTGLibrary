@@ -165,7 +165,7 @@ class AccountController extends Controller
         $input1 = $request->session()->get("accountc_input");
         //Log::debug($input1);
         $number = $input1[0];
-        Account::where(‘a_logic_flag’, TRUE)
+        Account::where('a_logic_flag', TRUE)
         ->where('account_number', $number)->update([
                 'account_name' => $input1['account_name'],
                 'mail_address' => $input1['mail_address'],
