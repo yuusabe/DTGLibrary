@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Account;
-use App\Models\Lend_book;
 use App\Models\Book;
+use App\Models\Book_category;
+use App\Models\Category;
+use App\Models\Lend_book;
+
 use Storage;
 
 class MypageshowController extends Controller
@@ -92,7 +95,7 @@ class MypageshowController extends Controller
                     'return_flag' => TRUE
                 ]);
             return view('completion');
-            
+
         }elseif($request->has('cancel')){
             return redirect()->route('book.list');
         }
