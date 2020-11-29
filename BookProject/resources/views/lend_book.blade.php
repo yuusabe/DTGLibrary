@@ -23,6 +23,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
         <div id="lend">
             <p>貸出期間選択</p>
         </div>
@@ -36,6 +37,19 @@
                         <span class="input-group-addon" id="dbox">　〜　</span>
                         <input type="date" class="input-sm form-control" name="last" id="dbox" value="<?php echo date('Y年m月d日');?>"/>
                     </div>
+=======
+    
+    <div id="lend">
+        <p>貸出期間選択</p>
+    </div>
+    <div id="date">
+        <div class="form-group" id="datepicker-daterange">
+            <div class="col-sm-9 form-inline" id="lend">
+                <div class="input-daterange input-group" id="datepicker">
+                    <input type="date" class="input-sm form-control" pattern=”[0-9]{4}/[0-9]{2}/[0-9]{2}” name="start" id="dbox" value="<?php echo date('Y-m-d');?>"/>
+                    <span class="input-group-addon" id="dbox">　〜　</span>
+                    <input type="date" class="input-sm form-control" pattern=”[0-9]{4}/[0-9]{2}/[0-9]{2}”　name="last" id="dbox" value="<?php echo date('Y-m-d');?>"/>
+>>>>>>> adafceb10c87028a84f629bcf6815748e13cc558
                 </div>
             </div>
         </div>
