@@ -171,10 +171,10 @@ class AccountController extends Controller
 
         if($manager_flag_conv == 1){
             $replacements1 = array(3 => False);
-            $input2 = array_replace($input2,$replacements1)
+            $input2 = array_replace($input2,$replacements1);
         }else{
             $replacements2 = array(3 => True);
-            $input2 = array_replace($input2,$replacements2)
+            $input2 = array_replace($input2,$replacements2);
         }
 
         Account::where('a_logic_flag', TRUE)
