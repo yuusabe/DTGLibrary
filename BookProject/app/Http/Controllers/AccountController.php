@@ -154,7 +154,7 @@ class AccountController extends Controller
         //セッションから値を取り出す
         $input1 = $request->session()->get("account_input_change");
         //セッションに値が無い時はフォームに戻る
-        if(!$input){
+        if(!$input1){
             return redirect()->action('App\Http\Controllers\AccountController@show');
         }
         return view("account_change_check",["input1" => $input1]);
