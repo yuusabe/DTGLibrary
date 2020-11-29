@@ -10,7 +10,7 @@
         <p>カテゴリを追加してください。</p>
     </div>
     <div id="category_a">
-        <form action="{{ route('category.post') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('category.list_post') }}" method="post">
             @csrf
             <div id="category">
                 <input type="text" id="textbox" name="category" class="form-control" placeholder="入力して下さい">
@@ -34,16 +34,22 @@
             </div>
             <div id="category_ch">
                 <div id="button_p">
-                    <div id="button">
-                        <button type="submit" class="btn btn-outline-secondary" name = "change">
-                            編集
-                        </button>
-                    </div>
-                    <div id="button">
-                        <button type="submit" class="btn btn-outline-secondary" name = "delete">
-                            削除
-                        </button>
-                </div>
+                    <form action="{{ route('category.list_post') }}" method="post">
+                        @csrf
+                        <div id="button">
+                            <button type="submit" class="btn btn-outline-secondary" name = "change">
+                                編集
+                            </button>
+                        </div>
+                    </form>
+                    <form action="{{ route('category.list_post') }}" method="post">
+                        @csrf
+                        <div id="button">
+                            <button type="submit" class="btn btn-outline-secondary" name = "delete">
+                                削除
+                            </button>
+                        </div>
+                    </form>
         @endforeach
         </div>
     </div>
