@@ -166,10 +166,21 @@ class AccountController extends Controller
         $input2 = $request->session()->get("account_input_change");
         //Log::debug($input1);
         $number = $input1[0];
+        $manager_flag_conv = $input2['manager_flag'];
+        
+
+        if($manager_flag_conv == 1){
+            $replacements1 = array(3 => False);
+            $input2 = array_replace($input2,$replacements1)
+        }else{
+            $replacements2 = array(3 => True);
+            $input2 = array_replace($input2,$replacements2)
+        }
+
         Account::where('a_logic_flag', TRUE)
         ->where('account_number', $number)->update([
                 'account_name' => $input2['account_name'],
-                'mail_address' => $input2['mail_address'],
+                'mail_address' => $input2['address'],
                 'password' => $input2['password'],
                 'manager_flag' => $input2['manager_flag']
                 ]);
