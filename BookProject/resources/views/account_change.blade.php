@@ -12,7 +12,8 @@
     </div>
     <form method="post" action="{{ route('account_change.post') }}">
       @csrf
-      <div id=tb_p>          
+      <div id=tb_p>  
+          <input type = "hidden" name="account_number" value="{{$input[0]}}">        
           <div id="tb">
             <p>アカウント名</p>
           </div>

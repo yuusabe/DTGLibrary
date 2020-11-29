@@ -161,38 +161,17 @@ class AccountController extends Controller
     }
 
     function send1(Request $request){
-        //セッションを空にする
-        $request->session()->forget("account_input_change");
-        return view("completion");
+        //セッションから値を取り出す
+        $input1 = $request->session()->get("account_input_change");
+        $number = $input1[0];
+        Account::where(‘a_logic_flag’, TRUE)
+        ->where('account_number', $number)->update([
+                'account_name' => $input1['account_name'],
+                'mail_address' => $input1['mail_address'],
+                'password' => $input1['password'],
+                'manager_flag' => $input1['manager_flag']
+                ]);
 
-
-
-        //モデルクラスのインスタンス化
-        $account_table = new Account();
-        //テーブルのカウント
-        $count_account=Account::get()->count();
-        //登録アカウントのID用意
-        $count_account++;
-        //データ挿入
-        if($input["accounttype"]=="一般ユーザ"){
-            $account_table->create([
-                'account_number' => $count_account,
-                'account_name' => $input["account_name"],
-                'mail_address' => $input["address"],
-                'password' => $input["password"],
-                'manager_flag' => FALSE,
-                'a_logic_flag' => true
-            ]);
-        }else{
-            $account_table->create([
-                'account_number' => $count_account,
-                'account_name' => $input["account_name"],
-                'mail_address' => $input["address"],
-                'password' => $input["password"],
-                'manager_flag' => TRUE,
-                'a_logic_flag' => TRUE
-            ]);
-        }
         //セッションを空にする
         $request->session()->forget("account_input");
         return view("completion");
