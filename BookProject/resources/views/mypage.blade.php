@@ -25,6 +25,8 @@
     </div>
     <div id="book_p">
         <?php
+            $lcheck =  $_COOKIE["lcheck"];
+
             if ($lcheck == "1")
             {
                 echo '<div id="book">
