@@ -26,7 +26,7 @@
     @foreach($ldata as $l)
     <div id="book_p">
     <div id="book">
-                        <img src="image/book_001.png" id="image" alt="アイコン" width="135" height="130" />
+                        <img src="{{$l->path}}" id="image" alt="アイコン" width="135" height="130" />
                     </div>
                     <div id="book">
                         <p>タイトル：{{$l -> book_name}}</p>

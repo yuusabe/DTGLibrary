@@ -34,6 +34,8 @@ class MypageshowController extends Controller
             ->where('book_number', $booknum)
             ->first();
             $l->book_name = $book->title;
+            $path = Storage::disk('s3')->url($book->cover_pic);
+            $l->path = $path;
         }
 
 
