@@ -110,7 +110,7 @@
 
   <div id="button_p">
     <div id="button" id="next">
-      <button type="button" class="btn btn-outline-success" onclick="location.href='https://www-cf.dtg-shosekikanri2020-test.tk/information_of_book'">
+      <button type="button" class="btn btn-outline-success" onclick="location.href='https://www-cf.dtg-booklibrary.tk/information_of_book'">
         前
       </button>
     </div>
