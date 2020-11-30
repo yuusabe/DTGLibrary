@@ -28,7 +28,11 @@ class RpaController extends Controller
 
             $piece = explode("-", $lend->return_day);
             Log::debug($piece);
-            $day = $piece[0]."年".$piece[1]."月".$piece[2]."日";
+            if (!empty($piece[2]))
+                {
+                    $day = $piece[0]."年".$piece[1]."月".$piece[2]."日";
+                }
+            
             $lend->day = $day;
 
         }
