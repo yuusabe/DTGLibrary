@@ -80,7 +80,7 @@
     <form action="{{ route('book.i_post') }}" method="post" enctype="multipart/form-data">
       @csrf
       <input type = "hidden" name="number" value="{{$d->book_number}}">
-      <input type = "hidden" name="path" value="{{$d->path}}"> 
+      <!-- <input type = "hidden" name="path" value="{{$d->path}}">  -->
         <button type="submit" class="btn btn-outline-secondary" name = "info">
           詳細表示
         </button>

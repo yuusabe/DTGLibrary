@@ -86,7 +86,11 @@ class TestController extends Controller
     function i_post(Request $request){
         if($request->has('info')){
                 $num = $request['number'];
-                $path = $request['path'];
+                $b_array = Book::where('b_logic_flag',TRUE)
+                ->where('book_number', $num)
+                ->first();
+                $path = Storage::disk('s3')->url($b_array->cover_pic);
+
                 $book_data = Book::where('b_logic_flag',TRUE)
                 ->where('book_number',$num)
                 ->first();
