@@ -16,7 +16,8 @@ class LoginController extends Controller
         $email_in = $request["email"];
         $pass_in = $request["pass"];
 
-        $adata = $account::where('mail_address', $email_in)->first();
+        $adata = $account::where('a_logic_flag',TRUE)
+        ->where('mail_address', $email_in)->first();
         $pass = $adata["password"];
 
         setcookie("login_e","ログインに失敗しました",time()+10);
