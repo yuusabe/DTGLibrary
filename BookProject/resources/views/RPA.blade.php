@@ -19,7 +19,7 @@
         <td>{{$lend->account_name}}</td>
         <td>{{$lend->mail_address}}</td>
         <td>{{$lend->title}}</td>
-        <td>{{$lend->return_day}}</td>
+        <td>{{$lend->day}}</td>
       </tr>
     @endforeach
     </tbody>
