@@ -348,6 +348,11 @@ class TestController extends Controller
                 ->update([
                     'b_logic_flag' => FALSE
                 ]);
+            Lend_book::where('return_flag',FALSE)
+                ->where('l_book_number',$num)
+                ->update([
+                    'return_flag' => TRUE
+                ]);
             return view('completion');
         }elseif($request->has('cancel')){
             return redirect()->route('book.list');
