@@ -36,7 +36,7 @@
         }
         ?>
       </p>
-      <input type="submit" class="fadeIn fourth" value="クッキー削除" onclick="deleteCookie()">
+      <!-- <input type="submit" class="fadeIn fourth" value="クッキー削除" onclick="deleteCookie()"> -->
       
 
       <!-- <button onclick="readCookie()">読み込み</button><br>

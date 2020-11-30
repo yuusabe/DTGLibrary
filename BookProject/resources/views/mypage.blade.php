@@ -12,7 +12,7 @@
         <div id="account">
             <p>アカウント名：{{$adata -> account_name}}</p>
             <p>メールアドレス：{{$adata -> mail_address}}</p>
-            <p>パスワード：{{$adata -> password}}</p>
+            <!-- <p>パスワード：{{$adata -> password}}</p> -->
         </div>
     </div>
     <div id="boo">
