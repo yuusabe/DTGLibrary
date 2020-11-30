@@ -53,7 +53,7 @@
     
     <div id="book">
       <div id="text">
-      @if($d->category_name == a)
+      @if($d->category_name == "a")
       @else
         <p id="category">
         {{$d -> category_name}}
