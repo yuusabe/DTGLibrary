@@ -17,7 +17,7 @@ class RpaController extends Controller
             $bookdata = Book::where('b_logic_flag', TRUE)
             ->where('book_number', $lend['l_book_number'])
             ->first();
-            $lend->title = $bookdata->title;
+            $lend->title = $bookdata['title'];
             $accountdata = Account::where('a_logic_flag', TRUE)
             ->where('account_number', $lend->l_account_number)
             ->first();
