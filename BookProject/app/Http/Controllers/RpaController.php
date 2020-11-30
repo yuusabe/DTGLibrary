@@ -23,7 +23,8 @@ class RpaController extends Controller
             $accountdata = Account::where('a_logic_flag', TRUE)
             ->where('account_number', $lend->l_account_number)
             ->first();
-            $lend->account_name = $accountdata->account_name;
+            // $lend->account_name = $accountdata->account_name;
+            $lend->account_name = $accountdata['account_name'];
             $lend->mail_address = $accountdata->mail_address;
 
             $piece = explode("-", $lend->return_day);
