@@ -182,7 +182,7 @@ class TestController extends Controller
                 $account_data = new \stdClass();
                 $account_data->account_name = 'a';
             }
-                $account_name = $account_data->account_name;
+                $account_name = $account_data['account_name'];
                 $return_day = $lend_data->return_day;
                 $category_name = $category_data2['category_name'];
                 
