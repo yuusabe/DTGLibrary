@@ -32,10 +32,14 @@ class LoginController extends Controller
         return view('login');
     }
 
-    // function block(){
-    //     if (empty($_COOKIE["anum"]))
-    //     {
-    //         return view('login');
-    //     }
-    // }
+    function block_lob(){
+        if (empty($_COOKIE["anum"]))
+        {
+            return view('login');
+        }
+        else
+        {
+            return view('list_of_books');
+        }
+    }
 }

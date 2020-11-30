@@ -134,6 +134,7 @@ Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 
 //loginのため追記
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
+Route::post('/list_of_books', 'App\Http\Controllers\LoginController@block_lob');
 
 //20201130追記　コントローラ変更
 Route::get('/mypage', 'App\Http\Controllers\MypageshowController@showp')->name("mypage.showp");
