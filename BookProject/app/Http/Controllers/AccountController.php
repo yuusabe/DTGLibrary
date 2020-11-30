@@ -66,7 +66,7 @@ class AccountController extends Controller
         }elseif($request->has('delete')){
             $num = $request['number'];
             $name = $request['account_name'];
-            $address = $request['account_name'];
+            $address = $request['mail_address'];
             if($request['manager_flag'] == 1){
                 $manager_flag = '一般ユーザ';
             }else{
