@@ -311,12 +311,12 @@ class TestController extends Controller
             //削除ボタン押下時
         }elseif($request->has('delete')){
             $num = $request['number'];
-            $title = $request['title'];
+            $booktitle = $request['title'];
             $author = $request['author'];
             $year = $request['year'];
             $publisher = $request['publisher'];
             $category = $request['category'];
-            return view('book_delete_check', compact('num','title','author','year','publisher','category'));
+            return view('book_delete_check', compact('num','booktitle','author','year','publisher','category'));
 
             //キャンセルボタン押下時
         }elseif($request->has('cancel')){
