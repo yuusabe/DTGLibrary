@@ -18,67 +18,8 @@ class TestController extends Controller
     public function getbook() 
     {
 
-        // $data = Book::where('b_logic_flag',TRUE)->get();
+        $data = Book::where('b_logic_flag',TRUE)->get();
 
-        // foreach($data as $index => $d){
-        //     $path = Storage::disk('s3')->url($d->cover_pic);
-        //     $d->path = $path;
-
-        //     $lend_exist = Lend_book::where('return_flag',FALSE)
-        //         ->where('l_book_number',$d->book_number)
-        //         ->exists();
-        //     if($lend_exist == TRUE){
-        //         $lend_data = Lend_book::where('return_flag',FALSE)
-        //         ->where('l_book_number',$d->book_number)
-        //         ->first();
-        //     }else{
-        //         $lend_data = new \stdClass();
-        //         $lend_data->return_day = '0000年00月00日';
-        //     }
-        //     $d->lendinfo = $lend_data->return_day;
-
-        //     // $category_exist = Book_category::where('bc_logic_flag',TRUE)
-        //     //     ->where('bc_book_number',$d->book_number)
-        //     //     ->exists();
-        //     // if($category_exist == TRUE){
-        //     //     $category_data = Book_category::where('bc_logic_flag',TRUE)
-        //     //     ->where('bc_book_number',$d->book_number)
-        //     //     ->first();
-        //     // }else{
-        //     //     $category_data = new \stdClass();
-        //     //     $category_data->bc_category_number = 0;
-        //     // }
-        //     //     $category_exist2 = Category::where('c_logic_flag',TRUE)
-        //     //     ->where('category_number',$category_data->bc_category_number)
-        //     //     ->exists();
-        //     // if($category_exist == TRUE){
-        //     //     $category_data2 = Category::where('c_logic_flag',TRUE)
-        //     //     ->where('category_number',$category_data->bc_category_number)
-        //     //     ->first();
-        //     // }else{
-        //     //     $category_data2 = new \stdClass();
-        //     //     $category_data2->category_name = 'a';
-        //     // }
-        //  }
-
-
-        // 書籍一覧情報取得
-        $data = DB::table('books')
-        ->leftjoin('book_categories',function ($bc){
-            $bc->on('book_categories.bc_book_number', 'books.book_number')
-            ->where('bc_logic_flag',TRUE);
-        })
-        ->leftjoin('categories','categories.category_number', 'book_categories.bc_category_number')
-        ->leftjoin('lend_books','lend_books.l_book_number', 'books.book_number')
-        ->where('b_logic_flag', TRUE)
-        ->orderBy('book_number', 'asc')
-        // ->where('bc_logic_flag', TRUE)
-        // ->select('book_number','title','year_of_issue','publisher','cover_pic','category_name','return_flag')
-        ->get();
-
-
-        // S3の画像パス取得
-        $before = 0;
         foreach($data as $index => $d){
             $path = Storage::disk('s3')->url($d->cover_pic);
             $d->path = $path;
@@ -95,15 +36,74 @@ class TestController extends Controller
                 $lend_data->return_day = '0000年00月00日';
             }
             $d->lendinfo = $lend_data->return_day;
+
+         $category_exist = Book_category::where('bc_logic_flag',TRUE)
+             ->where('bc_book_number',$d->book_number)
+             ->exists();
+         if($category_exist == TRUE){
+             $category_data = Book_category::where('bc_logic_flag',TRUE)
+            ->where('bc_book_number',$d->book_number)
+            ->first();
+         }else{
+            $category_data = new \stdClass();
+             $category_data->bc_category_number = 0;
+            }
+             $category_exist2 = Category::where('c_logic_flag',TRUE)
+            ->where('category_number',$category_data->bc_category_number)
+             ->exists();
+         if($category_exist == TRUE){
+             $category_data2 = Category::where('c_logic_flag',TRUE)
+             ->where('category_number',$category_data->bc_category_number)
+             ->first();
+              }else{
+                  $category_data2 = new \stdClass();
+                  $category_data2->category_name = 'a';
+            }
+            $category_data2 = json_decode(json_encode($category_data2), true);
+                $account_name = $category_data2['category_name'];
+        }
+
+
+        // 書籍一覧情報取得
+        // $data = DB::table('books')
+        // ->leftjoin('book_categories',function ($bc){
+        //     $bc->on('book_categories.bc_book_number', 'books.book_number')
+        //     ->where('bc_logic_flag',TRUE);
+        // })
+        // ->leftjoin('categories','categories.category_number', 'book_categories.bc_category_number')
+        // ->leftjoin('lend_books','lend_books.l_book_number', 'books.book_number')
+        // ->where('b_logic_flag', TRUE)
+        // ->orderBy('book_number', 'asc')
+        // ->get();
+
+
+        // S3の画像パス取得
+        // $before = 0;
+        // foreach($data as $index => $d){
+        //     $path = Storage::disk('s3')->url($d->cover_pic);
+        //     $d->path = $path;
+
+        //     $lend_exist = Lend_book::where('return_flag',FALSE)
+        //         ->where('l_book_number',$d->book_number)
+        //         ->exists();
+        //     if($lend_exist == TRUE){
+        //         $lend_data = Lend_book::where('return_flag',FALSE)
+        //         ->where('l_book_number',$d->book_number)
+        //         ->first();
+        //     }else{
+        //         $lend_data = new \stdClass();
+        //         $lend_data->return_day = '0000年00月00日';
+        //     }
+        //     $d->lendinfo = $lend_data->return_day;
             
 
-            if($d->book_number == $before){
-                $d->multi = 'ON' ;
-            }else{
-                $d->multi = 'OFF' ;
-            }
-            $before = $d->book_number;
-        }
+        //     if($d->book_number == $before){
+        //         $d->multi = 'ON' ;
+        //     }else{
+        //         $d->multi = 'OFF' ;
+        //     }
+        //     $before = $d->book_number;
+        // }
 
         // foreach($data as $d){
         //     if($d['book_number'] == ${'cate'.$d['book_number']}['number']){
@@ -261,9 +261,15 @@ class TestController extends Controller
                 $account_data = new \stdClass();
                 $account_data->account_name = 'a';
             }
-                $account_name = $account_data->account_name;
+            $account_data = json_decode(json_encode($account_data), true);
+                $category_data2 = json_decode(json_encode($category_data2), true);
+                $account_name = $account_data['account_name'];
                 $return_day = $lend_data->return_day;
-                $category_name = $category_data2->category_name;
+                $category_name = $category_data2['category_name'];
+                
+                // $account_name = $account_data->account_name;
+                // $return_day = $lend_data->return_day;
+                // $category_name = $category_data2->category_name;
                 return view('lend_book',compact('num','book_data','account_name','return_day', 'category_name'));
 
         }elseif($request->has('list')){

@@ -10,9 +10,8 @@
             <p>アカウント登録情報</p>
         </div>
         <div id="account">
-            <p>アカウント名：{{$adata -> account_name}}</p>
-            <p>メールアドレス：{{$adata -> mail_address}}</p>
-            <!-- <p>パスワード：{{$adata -> password}}</p> -->
+            <p>アカウント名：{{$adata['account_name']}}</p>
+            <p>メールアドレス：{{$adata['mail_address']}}</p>
         </div>
     </div>
     <div id="boo">
