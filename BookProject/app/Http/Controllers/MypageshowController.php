@@ -91,7 +91,7 @@ class MypageshowController extends Controller
                 $category_data2->category_name = 'a';
             }
             $category_name = $category_data2->category_name;
-        return view('return_book',compact('num','path','ldata','category_name'));
+        return view('return_book',compact('num','ldata','category_name'));
     }
 
     function return_show(){
