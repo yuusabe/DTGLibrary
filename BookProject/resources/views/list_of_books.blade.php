@@ -53,10 +53,9 @@
     
     <div id="book">
       <div id="text">
-      @if($d->category_name == "a")
-      @else
+      @if($d->category_name != "a")
         <p id="category">
-        {{$d -> category_name}}
+        {{$d->category_name}}
         </p>
       @endif
         <p id="title">タイトル：{{$d -> title}}</p>
