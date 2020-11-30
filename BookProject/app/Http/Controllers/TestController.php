@@ -293,6 +293,11 @@ class TestController extends Controller
             $start = $request['start'];
             $last = $request['last'];
 
+            $b_array = Book::where('b_logic_flag',TRUE)
+                ->where('book_number', $num)
+                ->first();
+                $path = Storage::disk('s3')->url($b_array->cover_pic);
+
             $book_data = Book::where('b_logic_flag',TRUE)
                 ->where('book_number',$num)
                 ->first();
@@ -321,7 +326,7 @@ class TestController extends Controller
             $category_data2 = json_decode(json_encode($category_data2), true);
             $category_name = $category_data2['category_name'];
 
-            return view('lend_check',compact('num', 'start','last','book_data','category_name'));
+            return view('lend_check',compact('num','path', 'start','last','book_data','category_name'));
 
         }elseif($request->has('cancel')){
             return redirect()->route('book.list');
