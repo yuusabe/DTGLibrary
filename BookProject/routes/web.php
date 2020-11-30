@@ -176,4 +176,4 @@ Route::get('/book_delete_check', 'App\Http\Controllers\TestController@delete_che
 Route::post('/book_delete_check', 'App\Http\Controllers\TestController@delete_send')->name("book.delete_send");
 
 //loginのため追記
-Route::post('/list_of_books', 'App\Http\Controllers\LoginController@block_lob');
+Route::get('/list_of_books', 'App\Http\Controllers\LoginController@block_lob');
