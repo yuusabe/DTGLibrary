@@ -89,7 +89,7 @@
     </div>
     <div id="button_p">
             <div id="button">
-                <button type="submit" class="btn btn-outline-secondary" name = "change">
+                <button type="submit" class="btn btn-outline-secondary" name = "change" disabled>
                     書籍編集
                 </button>
             </div>
