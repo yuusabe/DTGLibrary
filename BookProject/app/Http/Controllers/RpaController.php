@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Book_category;
 use App\Models\Category;
+use App\Models\Lend_book;
 
 class RpaController extends Controller
 {
