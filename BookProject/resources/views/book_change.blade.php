@@ -106,6 +106,13 @@
             @csrf
             <input type = "hidden" name="number" value="{{$num}}">
             <div id="button">
+            <input type = "hidden" name="title" value="{{$b_data->title}}">
+            <div id="button">
+            <input type = "hidden" name="author" value="{{$b_data->Author}}">
+            <input type = "hidden" name="year" value="{{$b_data->year_of_issue}}">
+            <input type = "hidden" name="publisher" value="{{$b_data->publisher}}">
+            <input type = "hidden" name="category" value="{{$category}}">
+            <div id="button">
                 <button type="submit" class="btn btn-outline-secondary" name = "delete">
                     削除
                 </button>

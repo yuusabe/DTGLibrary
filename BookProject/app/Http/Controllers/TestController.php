@@ -310,9 +310,13 @@ class TestController extends Controller
             return view('book_change_check');
             //削除ボタン押下時
         }elseif($request->has('delete')){
-            
             $num = $request['number'];
-            return view('book_delete_check', compact('num'));
+            $title = $request['title'];
+            $author = $request['author'];
+            $year = $request['year'];
+            $publisher = $request['publisher'];
+            $category = $request['category'];
+            return view('book_delete_check', compact('num','title','author','year','publisher','category'));
 
             //キャンセルボタン押下時
         }elseif($request->has('cancel')){
