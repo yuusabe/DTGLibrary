@@ -36,6 +36,29 @@ class TestController extends Controller
                 $lend_data->return_day = '0000年00月00日';
             }
             $d->lendinfo = $lend_data->return_day;
+
+            $category_exist = Book_category::where('bc_logic_flag',TRUE)
+                ->where('bc_book_number',$num)
+                ->exists();
+            if($category_exist == TRUE){
+                $category_data = Book_category::where('bc_logic_flag',TRUE)
+                ->where('bc_book_number',$num)
+                ->first();
+            }else{
+                $category_data = new \stdClass();
+                $category_data->bc_category_number = 0;
+            }
+                $category_exist2 = Category::where('c_logic_flag',TRUE)
+                ->where('category_number',$category_data->bc_category_number)
+                ->exists();
+            if($category_exist == TRUE){
+                $category_data2 = Category::where('c_logic_flag',TRUE)
+                ->where('category_number',$category_data->bc_category_number)
+                ->first();
+            }else{
+                $category_data2 = new \stdClass();
+                $category_data2->category_name = 'a';
+            }
         }
 
 

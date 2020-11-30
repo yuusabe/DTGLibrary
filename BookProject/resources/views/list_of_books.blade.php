@@ -53,11 +53,11 @@
     
     <div id="book">
       <div id="text">
-      @if($d->category_name != "a")
-        <p id="category">
-        {{$d->category_name}}
-        </p>
-      @endif
+        @if($d->category_name != "a")
+          <p id="category">
+          {{$d->category_name}}
+          </p>
+        @endif
         <p id="title">タイトル：{{$d -> title}}</p>
         <p>発行年：{{$d -> year_of_issue}}</p>
         <p>出版社：{{$d -> publisher}}</p>
