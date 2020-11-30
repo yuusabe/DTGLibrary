@@ -54,6 +54,10 @@ class MypageshowController extends Controller
     }
 
     function return_post(Request $request){
+        $b_array = Book::where('b_logic_flag',TRUE)
+                ->where('book_number', $num)
+                ->first();
+                $path = Storage::disk('s3')->url($b_array->cover_pic);
         $l_num = $request['number'];
         $b_number = Lend_book::where('lend_number',$l_num)
         ->first();
@@ -85,7 +89,7 @@ class MypageshowController extends Controller
                 $category_data2->category_name = 'a';
             }
             $category_name = $category_data2->category_name;
-        return view('return_book',compact('num','ldata','category_name'));
+        return view('return_book',compact('num','path','ldata','category_name'));
     }
 
     function return_show(){
@@ -94,6 +98,7 @@ class MypageshowController extends Controller
 
     function return_send(Request $request){
         if($request->has('return')){
+            
             $num = $request['number'];
             Lend_book::where('return_flag',FALSE)
                 ->where('l_book_number',$num)

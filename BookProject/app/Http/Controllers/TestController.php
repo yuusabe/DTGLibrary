@@ -217,6 +217,10 @@ class TestController extends Controller
     function l_post(Request $request){
         if($request->has('lend')){
                 $num = $request['number'];
+                $b_array = Book::where('b_logic_flag',TRUE)
+                ->where('book_number', $num)
+                ->first();
+                $path = Storage::disk('s3')->url($b_array->cover_pic);
                 $book_data = Book::where('b_logic_flag',TRUE)
                 ->where('book_number',$num)
                 ->first();
@@ -266,11 +270,11 @@ class TestController extends Controller
                 $account_name = $account_data['account_name'];
                 $return_day = $lend_data->return_day;
                 $category_name = $category_data2['category_name'];
-                
+
                 // $account_name = $account_data->account_name;
                 // $return_day = $lend_data->return_day;
                 // $category_name = $category_data2->category_name;
-                return view('lend_book',compact('num','book_data','account_name','return_day', 'category_name'));
+                return view('lend_book',compact('num','book_data','account_name','return_day', 'path','category_name'));
 
         }elseif($request->has('list')){
             return redirect()->route('book.list');
