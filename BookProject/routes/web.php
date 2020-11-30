@@ -126,7 +126,7 @@ Route::get('/return_book', 'App\Http\Controllers\AppController@return_book');
 
 Route::get('/return_check', 'App\Http\Controllers\AppController@return_check');
 
-Route::get('/RPA', 'App\Http\Controllers\AppController@RPA');
+Route::get('/RPA', 'App\Http\Controllers\RpaController@show');
 
 
 Route::get('/testpage', 'App\Http\Controllers\AppController@testpage');
