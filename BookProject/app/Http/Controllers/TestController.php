@@ -59,10 +59,10 @@ class TestController extends Controller
         //     //     $category_data2 = new \stdClass();
         //     //     $category_data2->category_name = 'a';
         //     // }
-        // }
+        //  }
 
 
-        書籍一覧情報取得
+        // 書籍一覧情報取得
         $data = DB::table('books')
         ->leftjoin('book_categories',function ($bc){
             $bc->on('book_categories.bc_book_number', 'books.book_number')
@@ -105,21 +105,23 @@ class TestController extends Controller
             $before = $d->book_number;
         }
 
-        foreach($data as $d){
-            if($d['book_number'] == ${'cate'.$d['book_number']}['number']){
-            }
+        // foreach($data as $d){
+        //     if($d['book_number'] == ${'cate'.$d['book_number']}['number']){
+        //     }
+        // }
 
     
-        for($i=0; $i<count($data); $i++){
-            for($n=$i; $n<count($data)-1; $n++){
-                if($data[$n]['book_number'] == $data[$n+1]['book_number']){
-                    $c_name[] = $data[$n]['category_name'];
-                }else{
-                    $c_name[] = $data[$n]['category_name'];
-                    $data[i]['category_array'] = $c_name;
-                    break;
-                }
-            }
+        // for($i=0; $i<count($data); $i++){
+        //     for($n=$i; $n<count($data)-1; $n++){
+        //         if($data[$n]['book_number'] == $data[$n+1]['book_number']){
+        //             $c_name[] = $data[$n]['category_name'];
+        //         }else{
+        //             $c_name[] = $data[$n]['category_name'];
+        //             $data[i]['category_array'] = $c_name;
+        //             break;
+        //         }
+        //     }
+        // }
         
 
         return view('list_of_books', compact('data'));
