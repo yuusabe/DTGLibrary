@@ -25,7 +25,7 @@ class MypageshowController extends Controller
         $adata = $account::where('a_logic_flag',TRUE)
         ->where('account_number', $anum)
         ->first();
-        $category_data2 = json_decode(json_encode($category_data2), false);
+        $a_data = json_decode(json_encode($a_data), false);
 
         
         $ldata = Lend_book::where('return_flag', FALSE)
