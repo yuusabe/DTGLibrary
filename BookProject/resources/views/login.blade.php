@@ -12,7 +12,18 @@
       <img src="image/dtg_book_logo.png" id="icon" alt="アイコン" />
     </div>
 
-
+      <p>
+        <?php
+        if (!empty($_COOKIE["login_e"]))
+        {
+            echo $_COOKIE["login_e"];
+        }
+        if (!empty($_COOKIE["login_c"]))
+        {
+            echo $_COOKIE["login_c"];
+        }
+        ?>
+      </p>
 
     <!-- Login Form -->
     <form method="post" action="{{ route('login.check') }}" enctype="multipart/form-data">
@@ -30,18 +41,6 @@
       </div> -->
 
       <input type="submit" class="fadeIn fourth" value="ログイン">
-      <p>
-        <?php
-        if (!empty($_COOKIE["login_e"]))
-        {
-            echo $_COOKIE["login_e"];
-        }
-        if (!empty($_COOKIE["login_c"]))
-        {
-            echo $_COOKIE["login_c"];
-        }
-        ?>
-      </p>
 
       <input type="submit" class="fadeIn fourth" value="クッキー削除" onclick="deleteCookie()">
       
