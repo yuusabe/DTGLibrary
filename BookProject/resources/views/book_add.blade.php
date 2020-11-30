@@ -81,7 +81,7 @@
                 <label>
                     <span class="btn btn-outline-ssecondary">
                         　　　　　　カテゴリ
-                        <select name="category" id="b_cbox" multiple>
+                        <select name="category" id="b_cbox">
                         @foreach($category as $c)
                             <option value="{{$c['category_name']}}">{{$c['category_name']}}
                         @endforeach

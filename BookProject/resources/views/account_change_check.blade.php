@@ -9,7 +9,11 @@
     <div id="account">
       <p>アカウント名：{{ $input1["account_name"] }}</p>
       <p>メールアドレス：{{ $input1["address"] }}</p>
-      <p>アカウントタイプ：{{ $input1["accounttype"] }}</p>
+      @if($input1["accounttype"] == 1)
+      <p>アカウントタイプ：一般ユーザ</p>
+      @else
+      <p>アカウントタイプ：管理者ユーザ</p>
+      @endif
     </div>
     <div id="text">
       <p>アカウント編集の変更内容はこちらでよろしいでしょうか。</p>
