@@ -15,7 +15,7 @@
         </div>
     </div>
     <div id="boo">
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/password_change'">
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='https://www-cf.dtg-booklibrary.tk/password_change'" disabled>
             パスワード変更
         </button>
     </div>
