@@ -184,7 +184,7 @@ class TestController extends Controller
             }
                 $account_name = $account_data->account_name;
                 $return_day = $lend_data->return_day;
-                $category_name = $category_data2->category_name;
+                $category_name = $category_data2['category_name'];
                 
                 return view('information_of_book',compact('num','path','book_data','account_name','return_day', 'category_name'));
         //     $num = $request['number'];
