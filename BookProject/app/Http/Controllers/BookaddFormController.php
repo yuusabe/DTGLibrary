@@ -22,6 +22,7 @@ class BookaddFormController extends Controller
         "category" => "required"
     ];
     function show(){
+        
         return view('book_add');
     }
     function post(Request $request){
