@@ -7,7 +7,7 @@
 <main>
     <div id="book_p">
         <div id="book">
-            <img src="{{$path}}" id="image" alt="表紙画像" width="135" height="130" />
+            <img src="" id="image" alt="表紙画像" width="135" height="130" />
         </div>
         <div id="book">
             <div id="text">
