@@ -55,11 +55,11 @@ class MypageshowController extends Controller
 
     function return_post(Request $request){
         $l_num = $request['number'];
-        $b_array = Book::where('b_logic_flag',TRUE)
-                ->where('book_number', $l_num)
-                ->first();
-                $b_array = json_decode(json_encode($b_array), true);
-                $path = Storage::disk('s3')->url($b_array['cover_pic']);
+        // $b_array = Book::where('b_logic_flag',TRUE)
+        //         ->where('book_number', $l_num)
+        //         ->first();
+        //         $b_array = json_decode(json_encode($b_array), true);
+        //         $path = Storage::disk('s3')->url($b_array['cover_pic']);
         
         $b_number = Lend_book::where('lend_number',$l_num)
         ->first();
