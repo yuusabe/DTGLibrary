@@ -19,6 +19,8 @@ class LoginController extends Controller
         $adata = $account::where('mail_address', $email_in)->first();
         $pass = $adata["password"];
 
+        setcookie("login_e","ログインに失敗しました",time()+60*60);
+
         if($pass != "" && $pass_in == $pass)
         {
             setcookie("anum",$adata["account_number"]);
@@ -29,8 +31,6 @@ class LoginController extends Controller
             return view('login_check',compact('adata'));
         }
 
-        setcookie("login_e","ログインに失敗しました",time()+60*60);
-        setcookie("login_c","クッキーテェック");
         return view('login');
     }
 
