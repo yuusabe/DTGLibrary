@@ -27,6 +27,7 @@ class RpaController extends Controller
             $lend->mail_address = $accountdata->mail_address;
 
             $piece = explode("-", $lend->return_day);
+            Log::debug($piece);
             $day = $piece[0]."年".$piece[1]."月".$piece[2]."日";
             $lend->day = $day;
 
