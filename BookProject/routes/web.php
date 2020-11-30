@@ -134,7 +134,6 @@ Route::get('/testpage', 'App\Http\Controllers\TestController@test');
 
 //loginのため追記
 Route::post('/login', 'App\Http\Controllers\LoginController@check')->name("login.check");
-Route::post('/list_of_books', 'App\Http\Controllers\LoginController@block_lob');
 
 //20201130追記　コントローラ変更
 Route::get('/mypage', 'App\Http\Controllers\MypageshowController@showp')->name("mypage.showp");
@@ -175,3 +174,6 @@ Route::post('/book_change_check', 'App\Http\Controllers\TestController@change_ch
 Route::get('/book_delete_check', 'App\Http\Controllers\TestController@delete_check_show');
 //書籍削除確認画面、確定ボタン押下時
 Route::post('/book_delete_check', 'App\Http\Controllers\TestController@delete_send')->name("book.delete_send");
+
+//loginのため追記
+Route::post('/list_of_books', 'App\Http\Controllers\LoginController@block_lob');
