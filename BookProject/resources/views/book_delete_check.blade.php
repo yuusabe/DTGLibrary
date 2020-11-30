@@ -10,7 +10,7 @@
             <img src="image/book_001.png" id="image" alt="表紙画像" width="135" height="130" />
         </div>
         <div id="book">
-            <p id="title">タイトル：{{$title}}</p>
+            <p id="title">タイトル：{{$booktitle}}</p>
             <p id="year">発行年：{{$year}}</p>
             <p id="author">著者：{{$author}}</p>
             <p id="publisher">出版社：{{$publisher}}</p>
