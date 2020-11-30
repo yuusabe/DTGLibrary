@@ -38,11 +38,11 @@ class TestController extends Controller
             $d->lendinfo = $lend_data->return_day;
 
             $category_exist = Book_category::where('bc_logic_flag',TRUE)
-                ->where('bc_book_number',$num)
+                ->where('bc_book_number',$d->book_number)
                 ->exists();
             if($category_exist == TRUE){
                 $category_data = Book_category::where('bc_logic_flag',TRUE)
-                ->where('bc_book_number',$num)
+                ->where('bc_book_number',$d->book_number)
                 ->first();
             }else{
                 $category_data = new \stdClass();
