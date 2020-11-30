@@ -30,7 +30,7 @@
       </div> -->
 
       <input type="submit" class="fadeIn fourth" value="ログイン">
-
+      <p>
         <?php
         if (!empty($_COOKIE["login_e"]))
         {
@@ -41,6 +41,7 @@
             echo $_COOKIE["login_c"];
         }
         ?>
+      </p>
 
       <input type="submit" class="fadeIn fourth" value="クッキー削除" onclick="deleteCookie()">
       
