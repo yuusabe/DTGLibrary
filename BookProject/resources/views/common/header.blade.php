@@ -30,7 +30,7 @@
                     $mflag = "なし";
                 }
 
-                if (!empty($_COOKIE["mflag"]))
+                if (!empty($_COOKIE["aname"]))
                 {
                     $aname = $_COOKIE["aname"];
                 }
@@ -49,7 +49,7 @@
                     echo '<img src="image/user_logo.png" alt="アイコン" width="150" height="150" />';
                 }
 
-                // echo $aname."さん";
+                echo $aname."さん";
 
                 ?>
 
