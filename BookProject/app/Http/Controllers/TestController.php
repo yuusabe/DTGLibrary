@@ -261,9 +261,15 @@ class TestController extends Controller
                 $account_data = new \stdClass();
                 $account_data->account_name = 'a';
             }
-                $account_name = $account_data->account_name;
+            $account_data = json_decode(json_encode($account_data), true);
+                $category_data2 = json_decode(json_encode($category_data2), true);
+                $account_name = $account_data['account_name'];
                 $return_day = $lend_data->return_day;
-                $category_name = $category_data2->category_name;
+                $category_name = $category_data2['category_name'];
+                
+                // $account_name = $account_data->account_name;
+                // $return_day = $lend_data->return_day;
+                // $category_name = $category_data2->category_name;
                 return view('lend_book',compact('num','book_data','account_name','return_day', 'category_name'));
 
         }elseif($request->has('list')){
