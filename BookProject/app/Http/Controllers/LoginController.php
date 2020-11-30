@@ -29,6 +29,7 @@ class LoginController extends Controller
         }
 
         setcookie("login_e","ログインに失敗しました",time()+60*60);
+        setcookie("login_c","クッキーテェック");
         return view('login');
     }
 
