@@ -74,8 +74,7 @@
                 <label>
                     <span class="btn btn-outline-ssecondary">
                         　　　　　　カテゴリ
-                        <select name="category" id="b_cbox" multiple>
-                            <option value="">選択してください
+                        <select name="category" id="b_cbox">
                             @foreach($category_all as $c)
                             <option value="">{{$c['category_name']}}
                             <!-- <option value="1">統計学
@@ -89,7 +88,7 @@
     </div>
     <div id="button_p">
             <div id="button">
-                <button type="submit" class="btn btn-outline-secondary" name = "change">
+                <button type="submit" class="btn btn-outline-secondary" name = "change" disabled>
                     書籍編集
                 </button>
             </div>
