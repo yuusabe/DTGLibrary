@@ -25,7 +25,7 @@ class RpaController extends Controller
             ->first();
             // $lend->account_name = $accountdata->account_name;
             $lend->account_name = $accountdata['account_name'];
-            $lend->mail_address = $accountdata->mail_address;
+            $lend->mail_address = $accountdata['mail_address'];
 
             $piece = explode("-", $lend->return_day);
             Log::debug($piece);
