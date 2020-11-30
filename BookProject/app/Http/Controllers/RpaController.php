@@ -8,6 +8,7 @@ use App\Models\Book;
 use App\Models\Book_category;
 use App\Models\Category;
 use App\Models\Lend_book;
+use Illuminate\Support\Facades\Log;
 
 class RpaController extends Controller
 {
@@ -18,6 +19,7 @@ class RpaController extends Controller
             $bookdata = Book::where('b_logic_flag', TRUE)
             ->where('book_number', $lend['l_book_number'])
             ->first();
+            
             $lend->title = $bookdata['title'];
             $accountdata = Account::where('a_logic_flag', TRUE)
             ->where('account_number', $lend->l_account_number)
