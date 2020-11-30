@@ -22,8 +22,10 @@ class BookaddFormController extends Controller
         "category" => "required"
     ];
     function show(){
-        
-        return view('book_add');
+        $category = Category::where('c_logic_flag', TRUE)
+        ->get();
+        $category = json_decode($category, true);
+        return view('book_add', compact('category'));
     }
     function post(Request $request){
         $input = $request->except('img_file');
