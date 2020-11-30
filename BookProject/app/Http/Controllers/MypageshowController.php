@@ -90,7 +90,8 @@ class MypageshowController extends Controller
                 $category_data2 = new \stdClass();
                 $category_data2->category_name = 'a';
             }
-            $category_name = $category_data2->category_name;
+            $category_data2 = json_decode(json_encode($category_data2), true);
+            $category_name = $category_data2['category_name'];
         return view('return_book',compact('num','ldata','category_name'));
     }
 
