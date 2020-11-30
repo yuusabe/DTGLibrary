@@ -82,11 +82,9 @@
                     <span class="btn btn-outline-ssecondary">
                         　　　　　　カテゴリ
                         <select name="category" id="b_cbox" multiple>
-                        @foreach()
-                            <option value="">選択してください
-                            <option value="RPA">RPA
-                            <option value="統計学">統計学
-                            <option value="AI">AI
+                        @foreach($category as $c)
+                            <option value="{{$c['category_name']}}">{{$c['category_name']}}
+                        @endforeach
                         </select>
                     </span>
                 </label>
