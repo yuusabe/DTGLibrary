@@ -25,6 +25,18 @@ class RpaController extends Controller
             ->first();
             $lend->account_name = $accountdata->account_name;
             $lend->mail_address = $accountdata->mail_address;
+
+            $piece = explode("-", $lend->return_day);
+            Log::debug($piece);
+            if (!empty($piece[2])){
+                $day = $piece[0]."年".$piece[1]."月".$piece[2]."日";
+                $lend->day = $day;
+            }else{
+                $lend->day = $lend->return_day;
+            }
+            
+            
+
         }
         return view('RPA',compact('lenddata'));
     }

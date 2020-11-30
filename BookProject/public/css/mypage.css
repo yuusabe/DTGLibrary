@@ -19,7 +19,7 @@
   height: 130px;
   width: 600px;
   margin: auto;
-  background-color: #ffffdd;
+  background-color: #fffff0;
 }
 /*囲み枠線設定・中央寄せ*/
 #book_p{
@@ -29,7 +29,7 @@
   height: 250px;
   width: 1000px;
   margin: auto;
-  background-color: #ffffdd;
+  background-color: #fffff0;
 }
 /*横並び・中央寄せ*/
 #book{

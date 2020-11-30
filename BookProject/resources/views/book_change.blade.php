@@ -74,8 +74,7 @@
                 <label>
                     <span class="btn btn-outline-ssecondary">
                         　　　　　　カテゴリ
-                        <select name="category" id="b_cbox" multiple>
-                            <option value="">選択してください
+                        <select name="category" id="b_cbox">
                             @foreach($category_all as $c)
                             <option value="">{{$c['category_name']}}
                             <!-- <option value="1">統計学

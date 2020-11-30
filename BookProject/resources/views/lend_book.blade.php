@@ -32,9 +32,9 @@
             <div class="form-group" id="datepicker-daterange">
                 <div class="col-sm-9 form-inline" id="lend">
                     <div class="input-daterange input-group" id="datepicker">
-                        <input type="date" class="input-sm form-control" name="start" id="dbox" value="<?php echo date('Y年m月d日');?>" readonly/>
+                        <input type="text" class="input-sm form-control" name="start" id="dbox" value="<?php echo date('Y年m月d日');?>" readonly/>
                         <span class="input-group-addon" id="dbox">　〜　</span>
-                        <input type="date" class="input-sm form-control" name="last" id="dbox" value="<?php echo date('Y年m月d日');?>"/>
+                        <input type="text" class="input-sm form-control" name="last" id="dbox" value="<?php echo date('Y年m月d日');?>"/>
                     </div>
                 </div>
             </div>
