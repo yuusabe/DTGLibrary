@@ -86,6 +86,7 @@ class TestController extends Controller
     function i_post(Request $request){
         if($request->has('info')){
                 $num = $request['number'];
+                $path = $request['path'];
                 $book_data = Book::where('b_logic_flag',TRUE)
                 ->where('book_number',$num)
                 ->first();
@@ -134,7 +135,7 @@ class TestController extends Controller
                 $return_day = $lend_data->return_day;
                 $category_name = $category_data2->category_name;
                 
-                return view('information_of_book',compact('num','book_data','account_name','return_day', 'category_name'));
+                return view('information_of_book',compact('num','path','book_data','account_name','return_day', 'category_name'));
         //     $num = $request['number'];
         //     $category = $request['category'];
         //     return view('information_of_book',compact('num','category'));
