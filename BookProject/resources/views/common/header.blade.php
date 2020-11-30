@@ -9,9 +9,9 @@
     <link rel="stylesheet" href=<?=$csspath?>>
     <link rel="stylesheet" href="css/header.css">
     <style>
-        body {background-color: #b3ffff;}
+        body {background-color: #bbffff;}
         header {background-color: #fffef4;}
-        main {background-color: #b3ffff;}
+        main {background-color: #bbffff;}
     </style>
     <title><?=$title?></title>
 </head>
